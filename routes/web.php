@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('index');
+Route::post('/custom-login', 'LoginController@customLogin')->name('custom.login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/student/dashboard', 'DashboardController@student')->name('student.dashboard');
+    Route::get('/teacher/dashboard', 'DashboardController@teacher')->name('teacher.dashboard');
 });

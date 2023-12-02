@@ -27,14 +27,15 @@
                         <span>Login to your account
                         </span>
                         <x-heroicon-m-chevron-right class="h-5 w-5" />
-                        {{-- <x-heroicon-o-arrow-right  /> --}}
+                        {{-- <x-heroicon-o-arrow-right /> --}}
                     </a>
                 </div>
             </div>
         </div>
         <div class="min-h-screen flex-col w-full lg:w-2/4 flex items-center justify-center">
             <form id="login-screen" class="flex items-center flex-col w-[95%] lg:w-full justify-center space-y-6"
-                method="post" action="/submit-form" autocomplete="off">
+                method="post" action="{{ route('custom.login') }}">
+                @csrf
                 <div class="flex flex-col items-center -space-y-1 lg:-space-y-3 justify-center">
                     <h2 class="text-[1rem] lg:text-[1.3rem]">Student/Staff Login</h2>
                     <h1 class="text-[2rem] lg:text-[3rem] font-medium"> Get Started! </h1>
