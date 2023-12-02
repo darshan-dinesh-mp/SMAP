@@ -10,7 +10,7 @@
 <body class="font-poppy">
     <div class="flex lg:flex-row flex-col">
         <div class="w-full lg:w-2/4 min-h-screen relative flex items-end justify-start">
-            <img src="images/background.png" class="w-full top-0 left-0 h-full object-cover absolute -z-20" alt="">
+            <img src="/images/background.png" class="w-full top-0 left-0 h-full object-cover absolute -z-20" alt="">
             <div
                 class="left-0 top-0 h-full w-full bg-gradient-to-t from-black/40 via-black/10 to-transparent absolute -z-10">
             </div>
@@ -38,7 +38,7 @@
                 method="post" action="{{ route('custom.login') }}">
                 @csrf
                 <div class="flex flex-col items-center -space-y-1 lg:-space-y-3 justify-center">
-                    <h2 class="text-[1rem] lg:text-[1.3rem]">Student/Staff Login</h2>
+                    <h2 class="text-[1rem] lg:text-[1.3rem]">Admin Login</h2>
                     <h1 class="text-[2rem] lg:text-[3rem] font-medium"> Get Started! </h1>
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
@@ -48,7 +48,7 @@
                             Email Address
                         </span>
                     </label>
-                    <input type="mail" name="email" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
+                    <input type="mail" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label">
@@ -57,9 +57,9 @@
                             Password
                         </span>
                     </label>
-                    <input type="password" name="password" class="input-fields" required placeholder="*****************">
+                    <input type="password" class="input-fields" required placeholder="*****************">
                 </div>
-                <input type="submit"
+                <input type="button"
                     class="text-[1.35rem] bg-primary w-[85%] lg:w-3/4 text-light py-3 px-24 rounded-lg hover:bg-primary/90 cursor-pointer duration-300 font-medium"
                     value="Login">
 
