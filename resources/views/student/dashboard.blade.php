@@ -17,7 +17,7 @@
                 <div
                     class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
                     <x-heroicon-o-user class="w-6 h-6" />
-                    <span class="font-medium">Delbin George</span>
+                    <span class="font-medium">Rakshitha M</span>
                     {{-- <span class="text-lg">NNM23MC111</span> --}}
                 </div>
             </a>
