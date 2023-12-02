@@ -55,7 +55,6 @@ class LoginController extends Controller
     {
         Auth::logout();
         session()->flush();
-
         return redirect('/');
     }
 }
