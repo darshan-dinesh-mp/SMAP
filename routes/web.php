@@ -30,7 +30,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/student-profile', function () {
     return view('student/studentprofile');
-});
+})->name('student-profile');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 

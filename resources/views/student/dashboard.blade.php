@@ -13,7 +13,7 @@
             <div class="-space-y-3">
                 <h1 class="text-2xl font-semibold">Dashboard</h1>
             </div>
-            <a href="{{ route('/student-profile') }}">
+            <a href="{{ route('student-profile') }}">
                 <div
                     class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
                     <x-heroicon-o-user class="w-6 h-6" />
