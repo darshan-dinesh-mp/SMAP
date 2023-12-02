@@ -17,7 +17,7 @@ use Psy\Readline\Hoa\Console;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {                                // index routes
     return view('index');
 });
 
@@ -30,7 +30,7 @@ Route::get('/admin', function () {
 
 
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard', function () {                      // student
     if (Session::has('user_id')) {
         return view('student/dashboard');
     } else {
@@ -59,7 +59,7 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/general-form', function () {
+Route::get('/general-form', function () {                   //forms(mse)
     if (Session::has('user_id')) {
         return view('student/forms/general-form');
     } else {
