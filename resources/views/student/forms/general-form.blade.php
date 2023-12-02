@@ -21,7 +21,7 @@
             </div>
         </nav>
     </div>
-    <form class="px-4 lg:px-12 space-y-4 pb-8" action="">
+    <form class="px-4 lg:px-12 space-y-4 pb-8" action="" method="post">
         <div>
             <h1 class="font-semibold tracking-widest mb-3 text-black/70">MENTOR INFO</h1>
             <div>
@@ -213,7 +213,7 @@
 
         <div>
             <p>The Information your entered cannot be modified after!</p>
-            <input type="button" value="Submit"
+            <input type="submit" value="Submit"
                 class="text-md bg-primary w-[85%] lg:w-56 text-light py-3 rounded-lg border-[2px] border-primary hover:bg-primary/90 cursor-pointer duration-300 font-medium">
         </div>
     </form>
