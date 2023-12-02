@@ -28,6 +28,10 @@ Route::get('/dashboard', function () {
     return view('student/dashboard');
 });
 
+Route::get('/edit-profile', function () {
+    return view('student/edit-profile');
+});
+
 Route::get('/dashboard', function () {
     return view('student/dashboard');
 })->name('dashboard');
@@ -35,6 +39,10 @@ Route::get('/dashboard', function () {
 Route::get('/student-profile', function () {
     return view('student/studentprofile');
 })->name('student-profile');
+
+Route::get('/edit-profile', function () {
+    return view('student/edit-profile');
+})->name('edit-profile');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 
