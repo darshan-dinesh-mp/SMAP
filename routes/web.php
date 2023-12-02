@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +27,6 @@ Route::get('admin/', function () {
 Route::post('/custom-login', 'LoginController@customLogin')->name('custom.login');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/student/dashboard', 'DashboardController@student')->name('student.dashboard');
-    Route::get('/teacher/dashboard', 'DashboardController@teacher')->name('teacher.dashboard');
+    Route::get('/student/dashboard', [DashboardController::class,'student'])->name('student.dashboard');
+    Route::get('/teacher/dashboard', [DashboardController::class,'teacher'])->name('teacher.dashboard');
 });

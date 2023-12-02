@@ -53,7 +53,7 @@
                             Email Address
                         </span>
                     </label>
-                    <input type="mail" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
+                    <input type="mail" name="email" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label">
@@ -62,9 +62,9 @@
                             Password
                         </span>
                     </label>
-                    <input type="password" class="input-fields" required placeholder="*****************">
+                    <input type="password" name="password" class="input-fields" required placeholder="*****************">
                 </div>
-                <input type="button"
+                <input type="submit"
                     class="text-[1.35rem] bg-primary w-[85%] lg:w-3/4 text-light py-3 px-24 rounded-lg hover:bg-primary/90 cursor-pointer duration-300 font-medium"
                     value="Login">
 
