@@ -17,7 +17,7 @@
                     <span>Profile</span>
                 </a>
             </div>
-            <div id="toggleSidebar" class="cursor-pointer">
+            <div id="toggleSidebar" class="cursor-pointer block lg:hidden">
                 <x-coolicon-hamburger-lg class="w-6 h-6" />
             </div>
         </nav>
@@ -97,23 +97,31 @@
 
         <div id="sidebar"
             class="fixed flex items-center justify-center space-y-8 flex-col inset-y-0 left-0 z-50 w-full bg-dark/80 text-white p-4 transform -translate-x-full transition-transform ease-in-out">
-            <a href="{{ route('edit-profile') }}" class="flex space-x-3">
+            <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
                 <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
                 <span class="font-medium">Edit Profile</span>
             </a>
-            <a href="{{ route('edit-profile') }}" class="flex space-x-3">
+            <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
                 <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
                 <span class="font-medium">Log Out</span>
             </a>
-            <div class="flex space-x-3">
+            <div id="closeSidebar" class="flex text-xl space-x-3 cursor-pointer">
                 <x-heroicon-m-x-mark class="w-6 h-6 group-hover:translate-x-1 duration-300" />
                 <span class="font-medium">Close</span>
             </div>
         </div>
+
         <script>
-            document.getElementById('toggleSidebar').addEventListener('click', function() {
-                const sidebar = document.getElementById('sidebar');
+            const sidebar = document.getElementById('sidebar');
+            const closeSidebar = document.getElementById('closeSidebar');
+            const toggleSidebar = document.getElementById('toggleSidebar');
+
+            toggleSidebar.addEventListener('click', function() {
                 sidebar.classList.toggle('-translate-x-full');
+            });
+
+            closeSidebar.addEventListener('click', function() {
+                sidebar.classList.add('-translate-x-full');
             });
         </script>
 </body>
