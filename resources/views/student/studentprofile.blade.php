@@ -11,12 +11,13 @@
     <div class="relative px-0 lg:px-12">
         <nav class=" w-full flex items-center justify-between px-4 lg:px-0 py-4">
             <div class="-space-y-3">
-                <h1 class="flex items-center justify-center space-x-2 text-2xl font-medium">
+                <a href="{{ route('dashboard') }}"
+                    class="flex items-center justify-center space-x-2 text-2xl font-medium">
                     <x-heroicon-o-arrow-small-left class="w-7 h-7" />
                     <span>
                         Profile
                     </span>
-                </h1>
+                </a>
             </div>
         </nav>
         <img src="https://images.unsplash.com/photo-1634814516913-a0e237050d77?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -26,17 +27,64 @@
                 <img src="https://www.delb.in/assets/DelbinGeorge-22bfff80.webp" alt="Profile Picture"
                     class="w-40 h-40 object-cover border-4 rounded-2xl">
             </div>
-            <div class="mx-4 mt-4">
-                <h1 class="text-xl lg:text-3xl font-semibold">Delbin George</h1>
-                <p class="text-md lg:text-xl text-gray-600">nnm23mc036@nmamit.in</p>
+            <div class="flex items-end justify-between w-[60%] md:w-[90%]">
+                <div class="mx-4 mt-4">
+                    <h1 class="text-xl lg:text-3xl font-semibold">Delbin George</h1>
+                    <p class="text-md lg:text-xl text-gray-600">nnm23mc036@nmamit.in</p>
+                </div>
+                <div
+                    class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
+                    <x-heroicon-m-pencil-square class="w-6 h-6" />
+                    {{-- <span class="font-medium">Edit Profile</span> --}}
+                </div>
             </div>
         </div>
-        <div class="space-y-3 mt-4 lg:mt-8 px-4 lg:px-0">
+        <div class="space-y-3 mt-4 lg:mt-8 px-4 lg:px-0 pb-8">
             <div class="space-y-1">
                 <h1 class="font-semibold tracking-widest text-black/70">ABOUT ME</h1>
                 <p class="text-lg">Passionate MCA student, coding enthusiast. Thrives
                     on crafting elegant solutions. Constant learner
                     embracing tech's limitless possibilities. 😋</p>
+            </div>
+            <div class="space-y-4">
+                <h1 class="font-semibold tracking-widest text-black/70">INTERESTS & SKILLS</h1>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Programming</span>
+                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Dancing</span>
+                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Reading</span>
+                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Traveling</span>
+                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Photography</span>
+                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Gaming</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h1 class="font-semibold tracking-widest text-black/70">PROJECTS</h1>
+                <ul class="list-inside list-disc">
+                    <li>Fitness App using Flutter</li>
+                    <li>Fitness App using Flutter</li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h1 class="font-semibold tracking-widest text-black/70">OBJECTIVES</h1>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+                    <div
+                        class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
+                        <x-heroicon-o-clock
+                            class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
+                        <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
+                    </div>
+                    <div
+                        class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
+                        <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" />
+                        <h1 class="font-medium text-xl text-dark/30">Update first MSE Marks</h1>
+                    </div>
+                    <div
+                        class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
+                        <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" />
+                        <h1 class="font-medium text-xl text-dark/30">Update second MSE Marks</h1>
+                    </div>
+                </div>
             </div>
         </div>
 </body>

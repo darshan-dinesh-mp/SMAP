@@ -28,6 +28,10 @@ Route::get('/dashboard', function () {
     return view('student/dashboard');
 });
 
+Route::get('/dashboard', function () {
+    return view('student/dashboard');
+})->name('dashboard');
+
 Route::get('/student-profile', function () {
     return view('student/studentprofile');
 })->name('student-profile');
