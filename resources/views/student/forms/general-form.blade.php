@@ -20,6 +20,62 @@
                 </a>
             </div>
         </nav>
+
+
+        <div>
+            <h1 class="font-semibold tracking-widest text-black/70">MENTOR INFO</h1>
+            <div>
+                <div class="flex space-x-5 text-xl">
+                    <span class="font-medium">Name of Mentor:</span>
+                    <span class="font-semibold">Harshitha</span>
+                </div>
+                <div class="flex space-x-5 text-xl">
+                    <span class="font-medium">Designation:</span>
+                    <span class="font-semibold">Assistant Professor</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="font-semibold tracking-widest text-black/70">STUDENT INFO</h1>
+            <div>
+                <div class="flex space-x-5 text-xl">
+                    <span class="font-medium">Full Name:</span>
+                    <span class="font-semibold">Rakshitha M</span>
+                </div>
+                <div class="flex space-x-5 text-xl">
+                    <span class="font-medium">USN:</span>
+                    <span class="font-semibold">NNM23MC111</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="font-semibold tracking-widest text-black/70">PERFORMANCE ENQUIRY</h1>
+            <form>
+                <div class="flex space-x-5 flex-col text-xl">
+                    <p class="font-medium">Are you having any difficulty in understanding
+                        the concepts? If so give details.</p>
+                    <input type="text" class="input" placeholder="type your text here. ">
+                    <p class="font-medium">Action taken</p>
+                    <input type="text" class="input" placeholder="type your text here. ">
+                    <p class="font-medium">State of the issue</p>
+                    <div>
+                        <div class="flex">
+                            <input type="radio" name="issue" value="Solved" id="issue">
+                            <label for="Solved">Solved</label>
+                        </div>
+                        <div class="flex">
+                            <input type="radio" name="issue" value="Not Solved" id="issue">
+                            <label for="Not Solved">Not Solved</label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
     </div>
 </body>
 
