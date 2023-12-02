@@ -31,11 +31,18 @@
                     <h1 class="text-xl lg:text-3xl font-semibold">Rakshitha M</h1>
                     <p class="text-md lg:text-xl text-gray-600">nnm23mc111@nmamit.in</p>
                 </div>
-                <a href="{{ route('edit-profile') }}"
-                    class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                    <x-heroicon-m-pencil-square class="w-6 h-6" />
-                    {{-- <span class="font-medium">Edit Profile</span> --}}
-                </a>
+                <div class="flex flex-row space-x-2">
+                    <a href="{{ route('edit-profile') }}"
+                        class="text-primary hover:bg-secondary group border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
+                        <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
+                        {{-- <span class="font-medium">Edit Profile</span> --}}
+                    </a>
+                    <a href="{{ route('edit-profile') }}"
+                        class="text-primary hover:bg-secondary border-2 group hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
+                        <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                        {{-- <span class="font-medium">Edit Profile</span> --}}
+                    </a>
+                </div>
             </div>
         </div>
         <div class="space-y-3 mt-4 lg:mt-8 px-4 lg:px-0 pb-8">
