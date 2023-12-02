@@ -14,6 +14,8 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             // Authentication succeeded
             $user = Auth::user();
+            session(['user_id' => $user->id, 'role' => $user->role]);
+
             if ($user->isStudent()) {
                 // Redirect students to the student dashboard
                 return redirect()->route('student.dashboard');
@@ -25,5 +27,13 @@ class LoginController extends Controller
 
         // Authentication failed
         return back()->withErrors(['email' => 'Invalid credentials']);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        session()->flush();
+
+        return redirect('/');
     }
 }
