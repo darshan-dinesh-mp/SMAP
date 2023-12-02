@@ -10,8 +10,7 @@
 <body class="font-poppy">
     <div class="flex lg:flex-row flex-col">
         <div class="w-full lg:w-2/4 min-h-screen relative flex items-end justify-start">
-            <img src="/images/background.png" class="w-full top-0 left-0 h-full object-cover absolute -z-20"
-                alt="">
+            <img src="/images/background.png" class="w-full top-0 left-0 h-full object-cover absolute -z-20" alt="">
             <div
                 class="left-0 top-0 h-full w-full bg-gradient-to-t from-black/40 via-black/10 to-transparent absolute -z-10">
             </div>
@@ -49,7 +48,7 @@
                             Email Address
                         </span>
                     </label>
-                    <input type="mail" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
+                    <input type="mail" class="input-fields" required placeholder="email">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label">
@@ -60,7 +59,7 @@
                     </label>
                     <input type="password" class="input-fields" required placeholder="*****************">
                 </div>
-                <input type="button"
+                <input type="submit"
                     class="text-[1.35rem] bg-primary w-[85%] lg:w-3/4 text-light py-3 px-24 rounded-lg hover:bg-primary/90 cursor-pointer duration-300 font-medium"
                     value="Login">
 

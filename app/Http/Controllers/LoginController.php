@@ -16,7 +16,12 @@ class LoginController extends Controller
             $user = Auth::user();
             session(['user_id' => $user->id, 'role' => $user->role]);
 
-            if ($user->isStudent()) {
+            
+            if($user->isAdmin()){
+                // Redirect admin to the admin dashboard
+                return redirect()->route('admin.dashboard');
+            }
+            elseif ($user->isStudent()) {
                 // Redirect students to the student dashboard
                 return redirect()->route('student.dashboard');
             } elseif ($user->isTeacher()) {
