@@ -37,4 +37,5 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::middleware(['auth'])->group(function () {
     Route::get('/student/dashboard', [DashboardController::class, 'student'])->name('student.dashboard');
     Route::get('/teacher/dashboard', [DashboardController::class, 'teacher'])->name('teacher.dashboard');
+    Route::get('/admin/dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
 });
