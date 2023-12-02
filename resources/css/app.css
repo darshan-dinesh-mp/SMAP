@@ -8,12 +8,16 @@
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+}
+
 @layer base {
     .input-fields {
         @apply text-[1.3rem] placeholder:text-dark/70 text-dark border-b-[3px] border-b-primary outline-none pb-1 pt-3 focus:placeholder:opacity-0;
     }
 
     label {
-        @apply text-[1rem] text-dark/70 lowercase;
+        @apply text-[1rem] text-dark/70  flex items-center space-x-1;
     }
 }
