@@ -9,6 +9,7 @@
         "blade-ui-kit/blade-heroicons": "^2.1",
         "blade-ui-kit/blade-ui-kit": "^0.4.0",
         "brunocfalcao/blade-feather-icons": "^3.0",
+        "codeat3/blade-coolicons": "^1.4",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
