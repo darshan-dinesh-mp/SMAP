@@ -25,7 +25,8 @@
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1554780336-390462301acf?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Profile Picture" class="w-40 h-40 object-cover border-4 rounded-2xl">
-                <div class="p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
+                <div
+                    class="p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
                     <x-heroicon-s-camera class="w-6 h-6" />
                 </div>
             </div>
@@ -130,6 +131,20 @@
                         <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" />
                     </span>
                 </div>
+            </div>
+            <div class="space-y-4">
+                <h1 class="font-semibold tracking-widest text-black/70">PROJECTS</h1>
+                <ul class="list-inside list-disc space-y-2">
+                    <li class="py-3 px-2 w-full rounded-lg bg-dark/10">Fitness App using Flutter</li>
+                    <input type="text" class="py-3 px-2 w-full rounded-lg bg-dark/10"
+                        placeholder="Add new project here!">
+                </ul>
+            </div>
+            <div class="space-x-4 w-full flex items-end justify-end">
+                <input type="button" value="Discard"
+                    class="text-md bg-secondary w-[85%] lg:w-56 py-3 rounded-lg border-[2px] text-primary border-primary cursor-pointer duration-300 font-medium">
+                <input type="button" value="Save"
+                    class="text-md bg-primary w-[85%] lg:w-56 text-light py-3 rounded-lg border-[2px] border-primary hover:bg-primary/90 cursor-pointer duration-300 font-medium">
             </div>
         </form>
 </body>
