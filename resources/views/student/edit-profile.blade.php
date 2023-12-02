@@ -20,17 +20,19 @@
                 </a>
             </div>
         </nav>
-        <img src="https://images.unsplash.com/photo-1634814516913-a0e237050d77?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Cover Photo" class="w-full rounded-none lg:rounded-xl h-64 object-cover">
+        <img src="images/background.png" alt="Cover Photo" class="w-full rounded-none lg:rounded-xl h-64 object-cover">
         <div class="mx-3 lg:mx-8 -mt-20 relative z-10 flex items-end">
-            <div class=" overflow-hidden ">
-                <img src="https://www.delb.in/assets/DelbinGeorge-22bfff80.webp" alt="Profile Picture"
-                    class="w-40 h-40 object-cover border-4 rounded-2xl">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1554780336-390462301acf?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Profile Picture" class="w-40 h-40 object-cover border-4 rounded-2xl">
+                <div class="p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
+                    <x-heroicon-s-camera class="w-6 h-6" />
+                </div>
             </div>
             <div class="flex items-end justify-between w-[60%] md:w-[90%]">
                 <div class="mx-4 mt-4">
-                    <h1 class="text-xl lg:text-3xl font-semibold">Delbin George</h1>
-                    <p class="text-md lg:text-xl text-gray-600">nnm23mc036@nmamit.in</p>
+                    <h1 class="text-xl lg:text-3xl font-semibold">Rakshitha M</h1>
+                    <p class="text-md lg:text-xl text-gray-600">nnm23mc111@nmamit.in</p>
                 </div>
             </div>
         </div>
