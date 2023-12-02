@@ -12,7 +12,7 @@
         <nav class="w-full flex items-center justify-between py-4 shadow-md px-12">
             <div class="-space-y-3">
                 <h2 class="text-lg font-medium">Hello,</h2>
-                <h1 class="text-[2rem] font-semibold">Rakshitha M</h1>
+                <h1 class="text-[2rem] font-semibold">Chirashree</h1>
             </div>
             <div
                 class="text-primary bg-black/10 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full p-3">
