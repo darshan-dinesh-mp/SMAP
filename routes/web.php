@@ -36,6 +36,23 @@ Route::get('/edit-profile', function () {
     return view('student/edit-profile');
 });
 
+Route::get('/general-form', function () {
+    return view('student/forms/general-form');
+});
+
+Route::get('/general-form', function () {
+    return view('student/forms/general-form');
+})->name('general-form');
+
+
+Route::get('/mse-one-form', function () {
+    return view('student/forms/mse-one-form');
+});
+
+Route::get('/mse-two-form', function () {
+    return view('student/forms/mse-two-form');
+});
+
 Route::get('/dashboard', function () {
     return view('student/dashboard');
 })->name('dashboard');
