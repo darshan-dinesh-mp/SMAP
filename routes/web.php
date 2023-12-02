@@ -24,7 +24,7 @@ Route::get('admin/', function () {
     return view('admin/index');
 });
 
-Route::post('/custom-login', 'LoginController@customLogin')->name('custom.login');
+Route::post('/custom-login', [LoginController::class,'customLogin'])->name('custom.login');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/student/dashboard', [DashboardController::class,'student'])->name('student.dashboard');
