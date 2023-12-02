@@ -52,26 +52,31 @@
 
         <div>
             <h1 class="font-semibold tracking-widest text-black/70">PERFORMANCE ENQUIRY</h1>
-            <form>
-                <div class="flex space-x-5 flex-col text-xl">
-                    <p class="font-medium">Are you having any difficulty in understanding
-                        the concepts? If so give details.</p>
-                    <input type="text" class="input" placeholder="type your text here. ">
-                    <p class="font-medium">Action taken</p>
-                    <input type="text" class="input" placeholder="type your text here. ">
-                    <p class="font-medium">State of the issue</p>
+
+            <form class="flex flex-col text-xl">
+                <div>
                     <div>
-                        <div class="flex">
-                            <input type="radio" name="issue" value="Solved" id="issue">
-                            <label for="Solved">Solved</label>
-                        </div>
-                        <div class="flex">
-                            <input type="radio" name="issue" value="Not Solved" id="issue">
-                            <label for="Not Solved">Not Solved</label>
-                        </div>
-
+                        <p class="font-medium">Are you having any difficulty in understanding
+                            the concepts? If so give details.</p>
+                        <input type="text" class="input border-b-2 border-primary py-2"
+                            placeholder="type your text here. ">
                     </div>
-
+                    <div>
+                        <p class="font-medium">Action taken</p>
+                        <input type="text" class="input border-b-2 border-primary py-2"
+                            placeholder="type your text here. ">
+                    </div>
+                    <p class="font-medium">State of the issue</p>
+                    <div class="flex space-x-4">
+                        <div class="flex space-x-2">
+                            <input type="radio" name="issue" value="Solved" id="issue">
+                            <label class="text-md font-medium" for="Solved">Solved</label>
+                        </div>
+                        <div class="flex space-x-2">
+                            <input type="radio" name="issue" value="Not Solved" id="issue">
+                            <label class="text-md font-medium" for="Not Solved">Not Solved</label>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
