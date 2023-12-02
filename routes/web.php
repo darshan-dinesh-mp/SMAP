@@ -20,13 +20,17 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('admin/', function () {
-    return view('admin/index');
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/dashboard', function () {
+    return view('student/dashboard');
 });
 
 Route::post('/custom-login', [LoginController::class,'customLogin'])->name('custom.login');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/student/dashboard', [DashboardController::class,'student'])->name('student.dashboard');
-    Route::get('/teacher/dashboard', [DashboardController::class,'teacher'])->name('teacher.dashboard');
+    Route::get('/student/dashboard', [DashboardController::class, 'student'])->name('student.dashboard');
+    Route::get('/teacher/dashboard', [DashboardController::class, 'teacher'])->name('teacher.dashboard');
 });
