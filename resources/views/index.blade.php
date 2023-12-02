@@ -20,9 +20,9 @@
                     <h2 class="font-medium text-xl">Welcome to</h2>
                     <h1 class="font-medium text-4xl">Student Mentorship App</h1>
                 </div>
-                <p class=" mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum
-                    dolor sit amet, consectetur adipisicing elit.</p>
+                <p class=" mb-3">To develop NITTE as a Centre of Excellence imparting quality education, generating
+                    competent, skilled manpower to face the scientific and social challenges, with a high degree of
+                    credibility, integrity, ethical standards and social concern.</p>
                 <div class="">
                     <a href="#login-screen" class="font-mono lg:hidden flex items-center space-x-2">
                         <span>Login to your account
@@ -38,7 +38,12 @@
                 method="post" action="{{ route('custom.login') }}">
                 @csrf
                 <div class="flex flex-col items-center -space-y-1 lg:-space-y-3 justify-center">
-                    <h2 class="text-[1rem] lg:text-[1.3rem]">Student/Staff Login</h2>
+                    <h2 class="text-[1rem] flex justify-center items-center space-x-2 lg:text-[1.3rem]">
+                        <x-heroicon-s-users class="w-5 h-5" />
+                        <span>
+                            Student & Staff Login
+                        </span>
+                    </h2>
                     <h1 class="text-[2rem] lg:text-[3rem] font-medium"> Get Started! </h1>
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">

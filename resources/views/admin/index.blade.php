@@ -10,7 +10,8 @@
 <body class="font-poppy">
     <div class="flex lg:flex-row flex-col">
         <div class="w-full lg:w-2/4 min-h-screen relative flex items-end justify-start">
-            <img src="/images/background.png" class="w-full top-0 left-0 h-full object-cover absolute -z-20" alt="">
+            <img src="/images/background.png" class="w-full top-0 left-0 h-full object-cover absolute -z-20"
+                alt="">
             <div
                 class="left-0 top-0 h-full w-full bg-gradient-to-t from-black/40 via-black/10 to-transparent absolute -z-10">
             </div>
@@ -20,9 +21,9 @@
                     <h2 class="font-medium text-xl">Welcome to</h2>
                     <h1 class="font-medium text-4xl">Student Mentorship App</h1>
                 </div>
-                <p class=" mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum
-                    dolor sit amet, consectetur adipisicing elit.</p>
+                <p class=" mb-3">To develop NITTE as a Centre of Excellence imparting quality education, generating
+                    competent, skilled manpower to face the scientific and social challenges, with a high degree of
+                    credibility, integrity, ethical standards and social concern.</p>
                 <div class="">
                     <a href="#login-screen" class="font-mono lg:hidden flex items-center space-x-2">
                         <span>Login to your account
