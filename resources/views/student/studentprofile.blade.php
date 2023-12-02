@@ -9,15 +9,16 @@
 
 <body class="font-poppy">
     <div class="relative px-0 lg:px-12">
-        <nav class=" w-full flex items-center justify-between px-4 lg:px-0 py-4">
-            <div class="-space-y-3">
+        <nav class="w-full flex items-center justify-between px-4 lg:px-0 py-4">
+            <div>
                 <a href="{{ route('dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
                     <x-heroicon-o-arrow-small-left class="w-7 h-7" />
-                    <span>
-                        Profile
-                    </span>
+                    <span>Profile</span>
                 </a>
+            </div>
+            <div id="toggleSidebar" class="cursor-pointer block lg:hidden">
+                <x-coolicon-hamburger-lg class="w-6 h-6" />
             </div>
         </nav>
         <img src="images/background.png" alt="Cover Photo" class="w-full rounded-none lg:rounded-xl h-64 object-cover">
@@ -31,7 +32,7 @@
                     <h1 class="text-xl lg:text-3xl font-semibold">Rakshitha M</h1>
                     <p class="text-md lg:text-xl text-gray-600">nnm23mc111@nmamit.in</p>
                 </div>
-                <div class="flex flex-row space-x-2">
+                <div class="hidden lg:flex flex-row space-x-2">
                     <a href="{{ route('edit-profile') }}"
                         class="text-primary hover:bg-secondary group border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
                         <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
@@ -93,6 +94,36 @@
                 </div>
             </div>
         </div>
+
+        <div id="sidebar"
+            class="fixed flex items-center justify-center space-y-8 flex-col inset-y-0 left-0 z-50 w-full bg-dark/80 text-white p-4 transform -translate-x-full transition-transform ease-in-out">
+            <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
+                <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
+                <span class="font-medium">Edit Profile</span>
+            </a>
+            <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
+                <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                <span class="font-medium">Log Out</span>
+            </a>
+            <div id="closeSidebar" class="flex text-xl space-x-3 cursor-pointer">
+                <x-heroicon-m-x-mark class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                <span class="font-medium">Close</span>
+            </div>
+        </div>
+
+        <script>
+            const sidebar = document.getElementById('sidebar');
+            const closeSidebar = document.getElementById('closeSidebar');
+            const toggleSidebar = document.getElementById('toggleSidebar');
+
+            toggleSidebar.addEventListener('click', function() {
+                sidebar.classList.toggle('-translate-x-full');
+            });
+
+            closeSidebar.addEventListener('click', function() {
+                sidebar.classList.add('-translate-x-full');
+            });
+        </script>
 </body>
 
 </html>
