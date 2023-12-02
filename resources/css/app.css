@@ -1,10 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+    scroll-behavior: smooth;
+}
+
 @layer base {
-     input {
-         @apply text-xl;
-     }
- }
- 
+    .input-fields {
+        @apply text-[1.3rem] placeholder:text-dark/70 text-dark border-b-[3px] border-b-primary outline-none pb-1 pt-3 focus:placeholder:opacity-0;
+    }
+
+    label {
+        @apply text-[1rem] text-dark/70 lowercase;
+    }
+}
