@@ -35,7 +35,7 @@
         </div>
         <div class="min-h-screen flex-col w-full lg:w-2/4 flex items-center justify-center">
             <form id="login-screen" class="flex items-center flex-col w-[95%] lg:w-full justify-center space-y-6"
-                method="post" action="{{ route('login') }}">
+                method="post" action="{{ route('admin_login') }}">
                 @csrf
                 <div class="flex flex-col items-center -space-y-1 lg:-space-y-3 justify-center">
                     <h2 class="text-[1rem] lg:text-[1.3rem]">Admin Login</h2>
@@ -48,7 +48,7 @@
                             Email Address
                         </span>
                     </label>
-                    <input type="mail" class="input-fields" required placeholder="email">
+                    <input type="mail" name="email" class="input-fields" required placeholder="email">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label">
@@ -57,7 +57,7 @@
                             Password
                         </span>
                     </label>
-                    <input type="password" class="input-fields" required placeholder="*****************">
+                    <input type="password" name="password" class="input-fields" required placeholder="*****************">
                 </div>
                 <input type="submit"
                     class="text-[1.35rem] bg-primary w-[85%] lg:w-3/4 text-light py-3 px-24 rounded-lg hover:bg-primary/90 cursor-pointer duration-300 font-medium"

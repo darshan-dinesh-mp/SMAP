@@ -101,7 +101,7 @@
                 <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
                 <span class="font-medium">Edit Profile</span>
             </a>
-            <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
+            <a href="{{ route('logout') }}" class="flex text-xl space-x-3">
                 <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
                 <span class="font-medium">Log Out</span>
             </a>

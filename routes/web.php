@@ -31,7 +31,7 @@ Route::get('/admin', function () {
 
 
 Route::get('/dashboard', function () {                      // student
-    if (Session::has('user_id')) {
+    if (Session::has('user_id') && Session::get('role')=="student") {
         return view('student/dashboard');
     } else {
         return redirect('/');
@@ -39,7 +39,7 @@ Route::get('/dashboard', function () {                      // student
 })->name('dashboard');
 
 Route::get('/student-profile', function () {
-    if (Session::has('user_id')) {
+    if (Session::has('user_id') && Session::get('role')=="student") {
         return view('student/studentprofile');
     } else {
         return redirect('/');
@@ -47,7 +47,7 @@ Route::get('/student-profile', function () {
 })->name('student-profile');
 
 Route::get('/edit-profile', function () {
-    if (Session::has('user_id')) {
+    if (Session::has('user_id') && Session::get('role')=="student") {
         return view('student/edit-profile');
     } else {
         return redirect('/');
@@ -60,7 +60,7 @@ Route::get('/edit-profile', function () {
 
 
 Route::get('/general-form', function () {                   //forms(mse)
-    if (Session::has('user_id')) {
+    if (Session::has('user_id') && Session::get('role')=="student") {
         return view('student/forms/general-form');
     } else {
         return redirect('/');
@@ -68,7 +68,7 @@ Route::get('/general-form', function () {                   //forms(mse)
 })->name('general-form');
 
 Route::get('/mse-one-form', function () {
-    if (Session::has('user_id')) {
+    if (Session::has('user_id') && Session::get('role')=="student") {
         return view('student/forms/mse-one-form');
     } else {
         return redirect('/');
@@ -76,7 +76,7 @@ Route::get('/mse-one-form', function () {
 })->name('mse-one-form');
 
 Route::get('/mse-two-form', function () {
-    if (Session::has('user_id')) {
+    if (Session::has('user_id') && Session::get('role')=="student") {
         return view('student/forms/mse-two-form');
     } else {
         return redirect('/');
@@ -91,7 +91,8 @@ Route::get('/mse-two-form', function () {
 
 
 
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
+Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
