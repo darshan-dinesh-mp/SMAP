@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('admin/', function () {
+    return view('admin/index');
+});
+
 Route::post('/custom-login', 'LoginController@customLogin')->name('custom.login');
 
 Route::middleware(['auth'])->group(function () {
