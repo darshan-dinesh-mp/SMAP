@@ -8,9 +8,9 @@
 </head>
 
 <body class="font-poppy">
-    <div class="">
-        <div class="px-4 lg:px-12">
-            <nav class="w-full flex items-center justify-between py-4">
+    {{-- <div class="px-0 lg:px-12">
+        <div class="">
+            <nav class="px-4 lg:px-0 w-full flex items-center justify-between py-4">
                 <div class="-space-y-3">
                     <h1 class="flex items-center justify-center space-x-2 text-2xl font-medium">
                         <x-heroicon-o-arrow-small-left class="w-7 h-7" />
@@ -20,42 +20,37 @@
                     </h1>
                 </div>
             </nav>
-            <div class="min-h-[48vh]">
-                <div
-                    class="rounded-xl relative bg-[url(https://images.unsplash.com/photo-1634814516913-a0e237050d77?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover py-32 h-2/4">
-                    <div class="absolute left-12 -bottom-20 z-10 flex items-end space-x-4">
-                        <img class="w-40 h-40 object-cover rounded-3xl border-4"
+            <div
+                class="rounded-none lg:rounded-xl bg-cover bg-[url(https://images.unsplash.com/photo-1634814516913-a0e237050d77?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)]">
+                <div class="h-48 lg:h-64 relative">
+                    <div class="absolute left-3 lg:left-12 -bottom-16 lg:-bottom-24 flex items-end space-x-3">
+                        <img class="w-28 lg:w-40 h-28 lg:h-40 object-cover rounded-xl lg:rounded-3xl border-2 lg:border-4"
                             src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="">
                         <div class="-space-y-1">
-                            <h1 class="text-3xl font-semibold">Delbin George</h1>
-                            <h2 class="text-xl text-black/40 font-semibold">nu23mca28@nmamit.in</h2>
+                            <h1 class="font-semibold text-2xl lg:text-3xl ">Delbin George</h1>
+                            <h2 class="font-medium text-sm lg:text-lg text-black/50">nuasdlkfasljdajaslk</h2>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="space-y-3">
-                <div class="space-y-1">
-                    <h1 class="font-semibold tracking-widest text-black/70">ABOUT ME</h1>
-                    <p class="text-lg">Passionate MCA student, coding enthusiast. Thrives
-                        on crafting elegant solutions. Constant learner
-                        embracing tech's limitless possibilities. 😋</p>
-                </div>
-                <div class="space-y-4">
-                    <h1 class="font-semibold tracking-widest text-black/70">INTERESTS & HOBBIES</h1>
-                    <div class="space-x-2">
-                        <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Programming</span>
-                        <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Dancing</span>
-                        <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Reading</span>
-                        <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Traveling</span>
-                        <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Photography</span>
-                        <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Gaming</span>
-                    </div>
-                </div>
+
+
+        </div>
+    </div> --}}
+    <div class="relative">
+        <img src="https://images.unsplash.com/photo-1634814516913-a0e237050d77?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Cover Photo" class="w-full h-56 object-cover">
+        <div class="mx-4 -mt-16 relative z-10 flex items-end">
+            <div class=" overflow-hidden ">
+                <img src="https://images.unsplash.com/photo-1634814516913-a0e237050d77?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Profile Picture" class="w-40 h-40 object-cover rounded-2xl">
+            </div>
+            <div class="mx-4 mt-4">
+                <h1 class="text-2xl font-semibold text-gray-800">John Doe</h1>
+                <p class="text-gray-600">Web Developer</p>
             </div>
         </div>
-
-    </div>
 </body>
 
 </html>
