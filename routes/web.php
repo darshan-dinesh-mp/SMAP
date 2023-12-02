@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::post('/login', [LoginController::class, 'login'])->name('login');
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
 Route::get('/admin', function () {
     return view('admin/index');
 });
@@ -42,12 +38,15 @@ Route::get('/dashboard', function () {
 
 Route::get('/student-profile', function () {
     return view('student/studentprofile');
+    // return view('student/edit-profile');
 })->name('student-profile');
 
 Route::get('/edit-profile', function () {
     return view('student/edit-profile');
 })->name('edit-profile');
 
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/student/dashboard', [DashboardController::class, 'student'])->name('student.dashboard');
