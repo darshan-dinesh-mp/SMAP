@@ -7,12 +7,23 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-black/90">
-    <h1 class="font-mono text-primary">Hello world!</h1>
-    <h1 class="font-mono text-secondary">Hello world!</h1>
-    <h1 class="font-mono text-accent">Hello world!</h1>
-    <h1 class="font-mono text-light">Hello world!</h1>
-    <h1 class="font-mono text-dark">Hello world!</h1>
+<body class="">
+    <div class="flex">
+        <div>
+            <form>
+                <div class="flex flex-col">
+                    <label for="email" class="">Email Address</label>
+                    <input type="mail" class="input" placeholder="nnm2xmcxxx@nmamit.in">
+                </div>
+                <div class="flex flex-col">
+                    <label for="password" class="">Password</label>
+                    <input type="password" class="input" placeholder="nnm2xmcxxx@nmamit.in">
+                </div>
+                <input type="button" value="Login">
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
