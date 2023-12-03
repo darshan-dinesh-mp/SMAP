@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GeneralFormController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -67,6 +68,12 @@ Route::get('/general-form', function () {                               //forms(
         return redirect('/');
     }
 })->name('general-form');
+
+Route::get('/general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
+
+
+
+
 
 Route::get('/mse-one-form', function () {
     if (Session::has('user_id') && Session::get('role')=="student") {

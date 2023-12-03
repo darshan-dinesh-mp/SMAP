@@ -71,3 +71,4 @@ queries to ask:
 - updation of student semester(auto/by mentor)
 - does mentor change after each sem/year?
 - Number of subjects in all the semeter is same?
+- can the student edit his/her profile? (Staffs will add the student)
