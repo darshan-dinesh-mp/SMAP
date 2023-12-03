@@ -1,0 +1,72 @@
+users{
+	user_id,
+	name,
+    email,
+    password,
+    role,
+
+}
+
+
+
+teachers{
+    mentor_id primary key references users,
+    department,
+
+}
+
+
+
+semester{
+    sem_id,
+    sub1,
+    sub2,
+    sub3,
+    sub4,
+    sub5,
+    sub6,
+    
+}
+
+
+
+mentees{
+    mentee_id references user_id,
+    mentor_id references teachers,       (question 2)
+    sem_id references semester,          (question 1), (if student sem_id updates automatically, mentee_id can be a primary key )
+}
+
+
+
+forms{
+    id,
+    student_id references user_id,       (if sem_id in mentees table updates automatically, mentee_id can refer to mentees primary key ) 
+    sem_id references semester,
+    field1,
+    field2,
+    field3,
+    field4,
+    field5,
+    field6,
+    sub1_att,
+    sub2_att,
+    sub3_att,
+    sub4_att,
+    sub5_att,
+    sub6_att,
+    field7,
+    field8,
+    field9,
+    field10,
+    field11,
+    field12,
+
+}
+
+
+
+
+
+queries to ask:
+- updation of student semester(auto/by mentor)
+- does mentor change after each sem/year?
