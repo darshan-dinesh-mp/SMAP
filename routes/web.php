@@ -61,15 +61,8 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/general-form', function () {                               //forms(mse)
-    if (Session::has('user_id') && Session::get('role')=="student") {
-        return view('student/forms/general-form');
-    } else {
-        return redirect('/');
-    }
-})->name('general-form');
-
-Route::get('/general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
+Route::get('/student-general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
+Route::post('/submit-form', [GeneralFormController::class, 'insert_form_data'])->name('submit-form');
 
 
 

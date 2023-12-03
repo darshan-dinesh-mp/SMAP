@@ -11,4 +11,14 @@ class Semester extends Model
 
     protected $table = 'semester';
     protected $primaryKey = 'sem';
+
+    protected $fillable = [
+        'sem',
+        'sub1',
+        'sub2',
+        'sub3',
+        'sub4',
+        'sub5',
+        'sub6',
+    ];
 }
