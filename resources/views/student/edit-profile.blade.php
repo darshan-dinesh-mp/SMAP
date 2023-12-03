@@ -21,19 +21,23 @@
             </div>
         </nav>
         <img src="images/background.png" alt="Cover Photo" class="w-full rounded-none lg:rounded-xl h-64 object-cover">
-        <div class="mx-3 lg:mx-8 -mt-20 relative z-10 flex items-end">
+        <div class="mx-3 lg:mx-8 -mt-12 lg:-mt-20 relative z-10 flex items-end">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1554780336-390462301acf?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Profile Picture" class="w-40 h-40 object-cover border-4 rounded-2xl">
-                <div
-                    class="p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
-                    <x-heroicon-s-camera class="w-6 h-6" />
+                    alt="Profile Picture" class="w-28 lg:w-40 h-28 lg:h-40 object-cover border-4 rounded-2xl">
+                <div class="relative">
+                    <input type="file" id="fileInput" class="hidden" />
+                    <label for="fileInput"
+                        class="p-2 lg:p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
+                        <x-heroicon-s-camera class="w-5 lg:w-6 h-5 lg:h-6" />
+                    </label>
                 </div>
+
             </div>
             <div class="flex items-end justify-between w-[60%] md:w-[90%]">
-                <div class="mx-4 mt-4">
-                    <h1 class="text-xl lg:text-3xl font-semibold">Rakshitha M</h1>
-                    <p class="text-md lg:text-xl text-gray-600">nnm23mc111@nmamit.in</p>
+                <div class="mx-3 -space-y-2 lg:space-y-0 lg:mx-4 mt-4">
+                    <h1 class="text-2xl lg:text-3xl font-semibold">Rakshitha M</h1>
+                    <p class="text-lg lg:text-xl text-gray-600">nnm23mc111@nmamit.in</p>
                 </div>
             </div>
         </div>
@@ -86,7 +90,6 @@
                             Gaming </span>
                         <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
                     </span>
-
                 </div>
                 <h1 class="font-semibold tracking-widest text-black/70">ADD NEW</h1>
                 <div class="flex flex-wrap gap-2">
