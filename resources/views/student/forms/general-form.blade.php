@@ -58,12 +58,12 @@
                     <div>
                         <p class="font-medium">Are you having any difficulty in understanding
                             the concepts? If so give details.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -84,12 +84,12 @@
                     <div>
                         <p class="font-medium">Are you having any difficulty in implementing the
                             concepts in the lab? If so give details.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -129,8 +129,8 @@
                         <span class="text-xl font-medium">Artificial Intelligence &
                             Machine Learning :</span>
                         <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                            placeholder="00" name="" id="">
+                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl" placeholder="00"
+                            name="" id="">
                     </div>
                     <div class="w-full flex items-center justify-between">
                         <span class="text-xl font-medium">Artificial Intelligence &
@@ -164,12 +164,12 @@
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div>
                         <p class="font-medium">Any issues in attendance.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -189,12 +189,12 @@
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div>
                         <p class="font-medium">Any other issue.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -215,10 +215,10 @@
             <div>
                 <h1 class="font-semibold tracking-widest mb-3 uppercase text-black/70">Projects involved</h1>
                 <div class="space-y-4">
-                    <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                    <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                         placeholder="project one">
 
-                    <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2"
+                    <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                         placeholder="project two">
                 </div>
             </div>
