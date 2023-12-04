@@ -60,6 +60,8 @@ forms{
     field10,
     field11,
     field12,
+    field13,
+    field14,
 
 }
 
@@ -71,3 +73,4 @@ queries to ask:
 - updation of student semester(auto/by mentor)
 - does mentor change after each sem/year?
 - Number of subjects in all the semeter is same?
+- can the student edit his/her profile? (Staffs will add the student)

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GeneralFormController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -60,13 +61,12 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/general-form', function () {                               //forms(mse)
-    if (Session::has('user_id') && Session::get('role')=="student") {
-        return view('student/forms/general-form');
-    } else {
-        return redirect('/');
-    }
-})->name('general-form');
+Route::get('/student-general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
+Route::post('/submit-form', [GeneralFormController::class, 'insert_form_data'])->name('submit-form');
+
+
+
+
 
 Route::get('/mse-one-form', function () {
     if (Session::has('user_id') && Session::get('role')=="student") {

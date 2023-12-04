@@ -22,7 +22,8 @@
         </nav>
     </div>
     <div class="flex items-center justify-center flex-col">
-        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="" method="post">
+        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}" method="post">
+            @csrf
             {{-- <h1 class="text-3xl font-semibold">General Form</h1> --}}
             <div>
                 <h1 class="font-semibold tracking-widest mb-3 text-black/70">MENTOR INFO</h1>
@@ -58,23 +59,23 @@
                     <div>
                         <p class="font-medium">Are you having any difficulty in understanding
                             the concepts? If so give details.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field1" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field2" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">State of the issue</p>
                         <div class="flex space-x-4">
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Solved" id="issue">
+                                <input type="radio" name="field3" value="Solved" id="issue">
                                 <label class="text-lg font-medium" for="Solved">Solved</label>
                             </div>
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Not Solved" id="issue">
+                                <input type="radio" name="field3" value="Not Solved" id="issue">
                                 <label class="text-lg font-medium" for="Not Solved">Not Solved</label>
                             </div>
                         </div>
@@ -84,23 +85,23 @@
                     <div>
                         <p class="font-medium">Are you having any difficulty in implementing the
                             concepts in the lab? If so give details.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field4" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field5" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">State of the issue</p>
                         <div class="flex space-x-4">
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Solved" id="issue">
+                                <input type="radio" name="field6" value="Solved" id="issue">
                                 <label class="text-lg font-medium" for="Solved">Solved</label>
                             </div>
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Not Solved" id="issue">
+                                <input type="radio" name="field6" value="Not Solved" id="issue">
                                 <label class="text-lg font-medium" for="Not Solved">Not Solved</label>
                             </div>
                         </div>
@@ -111,76 +112,36 @@
                 <h1 class="font-semibold tracking-widest mb-3 text-black/70 uppercase">Give the attendance percentage
                 </h1>
                 <div class="w-2/4 flex flex-col space-y-4 items-center justify-between">
+
+                    @foreach ($subjects as $subject)
                     <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl" placeholder="00"
-                            name="" id="">
+                        <span class="text-xl font-medium">{{ $subject }} :</span>
+                        <input type="number" name="{{ $subject }}" class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
+                            placeholder="00" name="{{ Str::slug($subject) }}" id="{{ Str::slug($subject) }}">
                     </div>
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl" placeholder="00"
-                            name="" id="">
-                    </div>
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl" placeholder="00"
-                            name="" id="">
-                    </div>
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                            placeholder="00" name="" id="">
-                    </div>
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                            placeholder="00" name="" id="">
-                    </div>
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                            placeholder="00" name="" id="">
-                    </div>
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">Artificial Intelligence &
-                            Machine Learning :</span>
-                        <input type="number"
-                            class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                            placeholder="00" name="" id="">
-                    </div>
+                    @endforeach
+
                 </div>
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div>
                         <p class="font-medium">Any issues in attendance.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field7" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field8" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">State of the issue</p>
                         <div class="flex space-x-4">
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Solved" id="issue">
+                                <input type="radio" name="field9" value="Solved" id="issue">
                                 <label class="text-lg font-medium" for="Solved">Solved</label>
                             </div>
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Not Solved" id="issue">
+                                <input type="radio" name="field9" value="Not Solved" id="issue">
                                 <label class="text-lg font-medium" for="Not Solved">Not Solved</label>
                             </div>
                         </div>
@@ -189,23 +150,23 @@
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div>
                         <p class="font-medium">Any other issue.</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field10" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field11" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">State of the issue</p>
                         <div class="flex space-x-4">
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Solved" id="issue">
+                                <input type="radio" name="field12" value="Solved" id="issue">
                                 <label class="text-lg font-medium" for="Solved">Solved</label>
                             </div>
                             <div class="flex space-x-2">
-                                <input type="radio" name="issue" value="Not Solved" id="issue">
+                                <input type="radio" name="field12" value="Not Solved" id="issue">
                                 <label class="text-lg font-medium" for="Not Solved">Not Solved</label>
                             </div>
                         </div>
@@ -215,10 +176,10 @@
             <div>
                 <h1 class="font-semibold tracking-widest mb-3 uppercase text-black/70">Projects involved</h1>
                 <div class="space-y-4">
-                    <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                    <input type="text" name="field13" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                         placeholder="project one">
 
-                    <input type="text" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                    <input type="text" name="field14" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                         placeholder="project two">
                 </div>
             </div>
