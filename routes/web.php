@@ -33,7 +33,7 @@ Route::get('/admin', function () {
 
 
 Route::get('/dashboard', function () {                                   // student
-    if (Session::has('user_id') && Session::get('role')=="student") {
+    if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/dashboard');
     } else {
         return redirect('/');
@@ -41,15 +41,23 @@ Route::get('/dashboard', function () {                                   // stud
 })->name('dashboard');
 
 Route::get('/student-profile', function () {
-    if (Session::has('user_id') && Session::get('role')=="student") {
+    if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/studentprofile');
     } else {
         return redirect('/');
     }
 })->name('student-profile');
 
+Route::get('/third-sem-subjects', function () {
+    if (Session::has('user_id') && Session::get('role') == "student") {
+        return view('student/subjects');
+    } else {
+        return redirect('/');
+    }
+})->name('third-sem-subjects');
+
 Route::get('/edit-profile', function () {
-    if (Session::has('user_id') && Session::get('role')=="student") {
+    if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/edit-profile');
     } else {
         return redirect('/');
@@ -69,7 +77,7 @@ Route::post('/submit-form', [GeneralFormController::class, 'insert_form_data'])-
 
 
 Route::get('/mse-one-form', function () {
-    if (Session::has('user_id') && Session::get('role')=="student") {
+    if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/forms/mse-one-form');
     } else {
         return redirect('/');
@@ -77,7 +85,7 @@ Route::get('/mse-one-form', function () {
 })->name('mse-one-form');
 
 Route::get('/mse-two-form', function () {
-    if (Session::has('user_id') && Session::get('role')=="student") {
+    if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/forms/mse-two-form');
     } else {
         return redirect('/');

@@ -12,12 +12,11 @@
         <nav class="w-full flex items-center justify-between py-4 shadow-md px-12">
             <div class="-space-y-3">
                 <h2 class="text-lg font-medium">Hello,</h2>
-                <h1 class="text-[2rem] font-semibold">Chirashree</h1>
+                <h1 class="text-[2rem] font-semibold"></h1>
             </div>
             <div
                 class="text-primary bg-black/10 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full p-3">
                 <x-heroicon-o-user class="w-6 h-6" />
-                {{-- <span class="text-lg">NNM23MC111</span> --}}
             </div>
         </nav>
         <div class="px-12 py-8">
@@ -28,7 +27,6 @@
                     <x-heroicon-s-star class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Update first MSE Marks!</h1>
                 </div>
-
             </div>
         </div>
     </div>

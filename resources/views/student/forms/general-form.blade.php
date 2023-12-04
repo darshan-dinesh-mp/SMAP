@@ -30,7 +30,7 @@
                 <div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">Name of Mentor:</span>
-                        <span class="font-semibold">Harshitha</span>
+                        <span class="font-semibold">Diana</span>
                     </div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">Designation:</span>
@@ -44,11 +44,11 @@
                 <div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">Full Name:</span>
-                        <span class="font-semibold">Rakshitha M</span>
+                        <span class="font-semibold">Bruce Wayne</span>
                     </div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">USN:</span>
-                        <span class="font-semibold">NNM23MC111</span>
+                        <span class="font-semibold">NNM23MC000</span>
                     </div>
                 </div>
             </div>

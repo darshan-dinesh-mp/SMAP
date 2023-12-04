@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
+
 </head>
 
 <body class="font-poppy">
@@ -18,7 +19,7 @@
                 </div>
             </div>
             <div class="pb-12 text-light px-6 lg:px-12">
-                <img src="/images/logo.png" class="w-32 h-full invert brightness-0 pb-2" alt="">
+                <img src="/images/logo.png" id="zoomLogo" class="w-32 h-full invert brightness-0 pb-2" alt="">
                 <div class="-space-y-1 mb-3">
                     <h2 class="font-medium text-xl">Welcome to</h2>
                     <h1 class="font-medium text-4xl">Student Mentorship App</h1>
@@ -50,7 +51,7 @@
                     <h1 class="text-[2rem] lg:text-[3rem] font-medium"> Get Started! </h1>
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
-                    <label for="password" class="label">
+                    <label for="password" class="label animate-shake">
                         <x-heroicon-o-user class="w-4 h-4" />
                         <span>
                             Email Address
@@ -60,7 +61,7 @@
                         placeholder="nnm2xmcxxx@nmamit.in">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
-                    <label for="password" class="label">
+                    <label for="password" class="label animate-shake">
                         <x-heroicon-o-lock-closed class="w-4 h-4" />
                         <span>
                             Password
