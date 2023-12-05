@@ -16,29 +16,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         //Data that must present in the table are given here. and this seeder is run to insert these data into the table. 
-        
+
         //admin
         DB::table("users")->insert([
-            "name"=> "admin name",
-            "email"=> "admin@example.com",
-            "password"=> bcrypt("password"),
-            "role"=>"admin",
+            "username" => "admin name",
+            "email" => "admin@example.com",
+            "password" => bcrypt("password"),
+            "role" => "admin",
         ]);
 
-        // Create a student
-        DB::table('users')->insert([
-            'name' => 'Student Name',
-            'email' => 'student@example.com',
-            'password' => Hash::make('password'), // Use the Hash facade to hash passwords
-            'role' => 'student',
-        ]);
-
-        // Create a teacher
-        DB::table('users')->insert([
-            'name' => 'Teacher Name',
-            'email' => 'teacher@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'teacher',
-        ]);
     }
 }
