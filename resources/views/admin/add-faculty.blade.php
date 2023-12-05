@@ -26,6 +26,12 @@
                 <div>
                     <div class="flex flex-col text-xl space-y-4 mb-4">
                         <div>
+                            <p class="font-medium pb-2">Faculty ID:</p>
+                            <input type="text" name="field1"
+                                class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
+                                placeholder="Faculty Number">
+                        </div>
+                        <div>
                             <p class="font-medium pb-2">Faculty Name:</p>
                             <input type="text" name="field1"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
