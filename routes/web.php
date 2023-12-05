@@ -20,7 +20,7 @@ use Psy\Readline\Hoa\Console;
 |
 */
 
-Route::get('/', function () {                                            // index routes
+Route::get('/', function () {                                           
     return view('index');
 });
 
@@ -34,13 +34,15 @@ Route::get('/add-faculty', function () {
 })->name('add-faculty');
 
 
-Route::get('/dashboard', function () {                                   // student
+
+
+Route::get('/dashboard', function () {                                   
     if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/dashboard');
     } else {
         return redirect('/');
     }
-})->name('dashboard');
+})->name('student_dashboard');
 
 Route::get('/student-profile', function () {
     if (Session::has('user_id') && Session::get('role') == "student") {

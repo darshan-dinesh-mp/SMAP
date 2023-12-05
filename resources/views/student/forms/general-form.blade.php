@@ -11,7 +11,7 @@
     <div class="relative px-0 lg:px-12">
         <nav class="w-full flex items-center justify-between px-4 lg:px-0 py-4">
             <div class="-space-y-3">
-                <a href="{{ route('dashboard') }}"
+                <a href="{{ route('student_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
                     <x-heroicon-o-arrow-small-left class="w-7 h-7" />
                     <span>

@@ -12,7 +12,7 @@
     <div>
         <nav class="w-full flex items-center justify-between py-4 border-b-2 px-4 lg:px-12">
             <div>
-                <a href="{{ route('dashboard') }}"
+                <a href="{{ route('student_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
                     <x-heroicon-o-arrow-small-left class="w-7 h-7" />
                     <span>Subject updates</span>
