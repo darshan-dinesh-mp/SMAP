@@ -52,7 +52,7 @@
                     <h1 class="text-lg">Email</h1>
                     <h1 class="text-lg">Actions</h1>
                 </div>
-                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/20">
+                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/10">
                     <h1 class="text-lg">NNMLL102AB</h1>
                     <h1 class="text-lg">Barry Allen</h1>
                     <h1 class="text-lg">NNM23MC111@NMAMIT.IN</h1>
@@ -60,7 +60,7 @@
                         <x-feathericon-edit class="w-5 h-5" />
                     </div>
                 </div>
-                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/20">
+                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/10">
                     <h1 class="text-lg">NNMLL102AB</h1>
                     <h1 class="text-lg">Barry Allen</h1>
                     <h1 class="text-lg">NNM23MC111@NMAMIT.IN</h1>

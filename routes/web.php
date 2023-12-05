@@ -33,6 +33,9 @@ Route::get('/add-faculty', function () {
     return view('admin/add-faculty');
 })->name('add-faculty');
 
+Route::get('/add-student', function () {
+    return view('teacher/add-student');
+})->name('add-student');
 
 
 
