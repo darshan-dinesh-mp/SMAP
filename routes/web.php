@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddFacultyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralFormController;
@@ -70,8 +71,8 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/student-general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
-Route::post('/submit-form', [GeneralFormController::class, 'insert_form_data'])->name('submit-form');
+// Route::get('/student-general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
+// Route::post('/submit-form', [GeneralFormController::class, 'insert_form_data'])->name('submit-form');
 
 
 
@@ -101,8 +102,11 @@ Route::get('/mse-two-form', function () {
 
 
 
+Route::post('/add_faculty', [AddFacultyController::class, 'insertTeacherUser'])->name('add_faculty');
+
 Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
 Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {

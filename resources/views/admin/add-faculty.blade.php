@@ -21,33 +21,33 @@
             </div>
         </nav>
         <div class="flex items-center min-h-[90vh] justify-center flex-col">
-            <form class="px-4 lg:px-12 space-y-8 py-8  w-full lg:w-2/4" method="post">
+            <form class="px-4 lg:px-12 space-y-8 py-8  w-full lg:w-2/4" method="post" action="{{ route('add_faculty') }}">
                 @csrf
                 <div>
                     <div class="flex flex-col text-xl space-y-4 mb-4">
                         <div>
                             <p class="font-medium pb-2">Faculty ID:</p>
-                            <input type="text" name="field1"
+                            <input type="text" name="id"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
-                                placeholder="Faculty Number">
+                                placeholder="Faculty Number" required>
                         </div>
                         <div>
                             <p class="font-medium pb-2">Faculty Name:</p>
-                            <input type="text" name="field1"
+                            <input type="text" name="name"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
-                                placeholder="Faculty Name">
+                                placeholder="Faculty Name" required>
                         </div>
                         <div>
                             <p class="font-medium pb-2">Email:</p>
-                            <input type="mail" name="field1"
+                            <input type="mail" name="email"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
-                                placeholder="nnm23mc000@nmamit.in">
+                                placeholder="*******@nmamit.in" required>
                         </div>
                         <div>
                             <p class="font-medium pb-2">Password:</p>
-                            <input type="text" name="field1"
+                            <input type="text" name="password"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
-                                placeholder="***************">
+                                placeholder="***************" required>
                         </div>
                     </div>
                 </div>
