@@ -31,10 +31,12 @@
                 <h1 class="text-2xl font-medium">
                     Add Facutlies
                 </h1>
-                <div class="flex items-center justify-center text-white rounded-xl bg-green-400 py-2 px-4">
-                    <x-feathericon-plus class="w-6 h-6" />
-                    <span class="text-xl">Add</span>
-                </div>
+                <a href="{{ route('add-faculty') }}">
+                    <div class="flex items-center justify-center text-white rounded-xl bg-green-400 py-2 px-4">
+                        <x-feathericon-plus class="w-6 h-6" />
+                        <span class="text-xl">Add</span>
+                    </div>
+                </a>
             </div>
             <div>
                 <h1 class="text-2xl font-medium">All Facutlies</h1>

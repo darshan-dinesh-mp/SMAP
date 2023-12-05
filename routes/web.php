@@ -30,7 +30,7 @@ Route::get('/admin', function () {
 
 Route::get('/add-faculty', function () {
     return view('admin/add-faculty');
-});
+})->name('add-faculty');
 
 
 Route::get('/dashboard', function () {                                   // student
