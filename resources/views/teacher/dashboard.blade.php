@@ -11,23 +11,19 @@
     <div class="">
         <nav class="w-full flex items-center justify-between py-4 shadow-md px-12">
             <div class="-space-y-3">
-                <h2 class="text-lg font-medium">Hello,</h2>
-                <h1 class="text-[2rem] font-semibold"></h1>
+                <h1 class="text-2xl font-semibold">Mentor Dashboard</h1>
             </div>
-            <div
-                class="text-primary bg-black/10 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full p-3">
-                <x-heroicon-o-user class="w-6 h-6" />
-            </div>
+            <a href="{{ route('student-profile') }}">
+                <div
+                    class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
+                    <x-heroicon-o-user class="w-6 h-6" />
+                    <span class="font-medium hidden lg:block">Alfred Pennyworth</span>
+                </div>
+            </a>
         </nav>
         <div class="px-12 py-8">
             <h1 class="text-2xl font-medium mb-6">Latest Updates</h1>
-            <div class="grid grid-cols-3 gap-6 w-full">
-                <div
-                    class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                    <x-heroicon-s-star class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
-                    <h1 class="font-medium text-xl group-hover:text-dark/80">Update first MSE Marks!</h1>
-                </div>
-            </div>
+
         </div>
     </div>
 </body>
