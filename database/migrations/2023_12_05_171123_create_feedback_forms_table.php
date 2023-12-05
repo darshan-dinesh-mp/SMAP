@@ -10,11 +10,11 @@ class CreateFeedbackFormsTable extends Migration
     {
         Schema::create('feedback_forms', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id');
+            $table->string('student_id');
             $table->enum('semester', ['1st', '2nd', '3rd', '4th']);
             $table->enum('mse', ['1', '2', '3']);
             // Add other fields related to feedback
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('student_id')->references('student_id')->on('students');
             $table->timestamps();
         });
     }

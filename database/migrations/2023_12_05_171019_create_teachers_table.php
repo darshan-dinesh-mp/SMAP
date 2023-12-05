@@ -10,9 +10,10 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique();
-            // Add other teacher-specific fields
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('teacher_id')->unique();
+            $table->string('fullname');
+            $table->integer('contact')->nullable();
+            $table->foreign('teacher_id')->references('user_id')->on('users');
             $table->timestamps();
         });
     }

@@ -9,11 +9,11 @@ class CreateMentorshipTable extends Migration
     public function up()
     {
         Schema::create('mentorship', function (Blueprint $table) {
-            $table->unsignedBigInteger('mentor_id');
-            $table->unsignedBigInteger('mentee_id');
+            $table->string('mentor_id');
+            $table->string('mentee_id');
             $table->primary(['mentor_id', 'mentee_id']);
-            $table->foreign('mentor_id')->references('id')->on('teachers');
-            $table->foreign('mentee_id')->references('id')->on('students');
+            $table->foreign('mentor_id')->references('teacher_id')->on('teachers');
+            $table->foreign('mentee_id')->references('student_id')->on('students');
         });
     }
 
