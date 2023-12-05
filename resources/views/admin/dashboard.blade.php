@@ -32,34 +32,46 @@
                     Add Facutlies
                 </h1>
                 <a href="{{ route('add-faculty') }}">
-                    <div class="flex items-center justify-center text-white rounded-xl bg-green-400 py-2 px-4">
+                    <div
+                        class="flex items-center justify-center text-white rounded-md bg-green-500 hover:bg-green-400 duration-300 py-2 px-12">
                         <x-feathericon-plus class="w-6 h-6" />
-                        <span class="text-xl">Add</span>
+                        <span class="text-xl lowec">Add</span>
                     </div>
                 </a>
             </div>
             <div>
-                <h1 class="text-2xl font-medium">All Facutlies</h1>
-                <div class="odd:bg-secondary">
-                    <div class="flex items-center justify-between bg-black/10 py-4 px-3">
-                        <h1 class="text-lg">Name</h1>
-                        <h1 class="text-lg">Actions</h1>
-                    </div>
-                    <div class="flex items-center justify-between py-4 px-3">
-                        <h1 class="text-lg">Barry Allen</h1>
-                        <div>
-                            <x-feathericon-edit class="w-5 h-5" />
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between py-4 px-3">
-                        <h1 class="text-lg">Barry Allen</h1>
-                        <div>
-                            <x-feathericon-edit class="w-5 h-5" />
-                        </div>
-                    </div>
+                <div class="flex items-center space-x-1 pb-3">
+                    <x-heroicon-o-user class="w-5 h-5" />
+                    <h1 class="text-xl font-medium">All Facutlies</h1>
                 </div>
             </div>
+            <div class="">
+                <div class="flex items-center justify-between border-b-2 border-black/20 bg-secondary p-4">
+                    <h1 class="text-lg">ID</h1>
+                    <h1 class="text-lg">Faculty Name</h1>
+                    <h1 class="text-lg">Email</h1>
+                    <h1 class="text-lg">Actions</h1>
+                </div>
+                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/20">
+                    <h1 class="text-lg">NNMLL102AB</h1>
+                    <h1 class="text-lg">Barry Allen</h1>
+                    <h1 class="text-lg">NNM23MC111@NMAMIT.IN</h1>
+                    <div>
+                        <x-feathericon-edit class="w-5 h-5" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/20">
+                    <h1 class="text-lg">NNMLL102AB</h1>
+                    <h1 class="text-lg">Barry Allen</h1>
+                    <h1 class="text-lg">NNM23MC111@NMAMIT.IN</h1>
+                    <div>
+                        <x-feathericon-edit class="w-5 h-5" />
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </div>
     </div>
 </body>
 
