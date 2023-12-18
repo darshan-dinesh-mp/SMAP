@@ -12,7 +12,7 @@ class CreateMentorshipTable extends Migration
             $table->string('mentor_id');
             $table->string('mentee_id');
             $table->primary(['mentor_id', 'mentee_id']);
-            $table->foreign('mentor_id')->references('teacher_id')->on('teachers');
+            $table->foreign('mentor_id')->references('emp_id')->on('teachers');
             $table->foreign('mentee_id')->references('student_id')->on('students');
         });
     }

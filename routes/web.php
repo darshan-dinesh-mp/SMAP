@@ -29,6 +29,20 @@ Route::get('/admin', function () {
 });
 
 
+Route::get('/teacher-profile', function () {
+    return view('teacher/teacherprofile');
+})->name('teacher-profile');
+
+Route::get('/teacher_dashboard', function () {                                   
+    if (Session::has('user_id') && Session::get('role') == "teacher") {
+        return view('teacher/dashboard');
+    } else {
+        return redirect('/');
+    }
+})->name('teacher_dashboard');
+
+
+
 Route::get('/add-faculty', function () {
     return view('admin/add-faculty');
 })->name('add-faculty');
@@ -39,7 +53,7 @@ Route::get('/add-student', function () {
 
 
 
-Route::get('/dashboard', function () {                                   
+Route::get('/student_dashboard', function () {                                   
     if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/dashboard');
     } else {
