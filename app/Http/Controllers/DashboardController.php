@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Teacher;
+
 
 class DashboardController extends Controller
 {
     public function admin()
     {
-        return view('admin.dashboard'); 
+        $teachers = Teacher::all();
+        return view('admin.dashboard',compact('teachers')); 
     }
 
     public function student()

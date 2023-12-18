@@ -6,6 +6,7 @@ use BladeUIKit\Components\Buttons\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LoginController extends Controller
 {
     public function student_staff_login(Request $request)
@@ -41,7 +42,6 @@ class LoginController extends Controller
             session(['user_id' => $user->id, 'role' => $user->role]);
 
             if ($user->isAdmin()) {
-                // Redirect admin to the admin dashboard
                 return redirect()->route('admin.dashboard');
             } else {
                 Auth::logout();

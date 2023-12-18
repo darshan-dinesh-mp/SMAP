@@ -12,7 +12,7 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->string('emp_id')->unique();
             $table->string('fullname');
-            $table->integer('contact')->nullable();
+            $table->string('contact')->nullable();
             $table->foreign('emp_id')->references('user_id')->on('users');
             $table->timestamps();
         });

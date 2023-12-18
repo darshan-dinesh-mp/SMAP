@@ -20,8 +20,9 @@
                 </a>
             </div>
         </nav>
-        <div class="flex items-center min-h-[90vh] justify-center flex-col">
-            <form class="px-4 lg:px-12 space-y-8 py-8  w-full lg:w-2/4" method="post" action="{{ route('add_faculty') }}">
+        <div class="flex items-center min-h-[90vh] justify-center flex-col relative">
+            <form class="px-4 lg:px-12 space-y-8 py-8  w-full lg:w-2/4" method="post"
+                action="{{ route('add_faculty') }}">
                 @csrf
                 <div>
                     <div class="flex flex-col text-xl space-y-4 mb-4">
@@ -38,14 +39,20 @@
                                 placeholder="Faculty Name" required>
                         </div>
                         <div>
+                            <p class="font-medium pb-2">Contact Number:</p>
+                            <input type="number" name="contact"
+                                class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
+                                placeholder="XXXXXXXXXX" required>
+                        </div>
+                        <div>
                             <p class="font-medium pb-2">Email:</p>
                             <input type="mail" name="email"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
-                                placeholder="*******@nmamit.in" required>
+                                placeholder="*******nmamit.in" required>
                         </div>
                         <div>
                             <p class="font-medium pb-2">Password:</p>
-                            <input type="text" name="password"
+                            <input type="password" name="password"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
                                 placeholder="***************" required>
                         </div>
@@ -55,9 +62,26 @@
                     <input type="submit" value="Submit"
                         class="text-md bg-primary w-[85%] lg:w-56 text-light py-3 rounded-lg border-[2px] border-primary hover:bg-primary/90 cursor-pointer duration-300 font-medium">
                 </div>
+            </form>
+            <div>
+                @if (session('error'))
+                    <div id="error-message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                        <div class="flex items-center justify-center space-x-2 text-red-500">
+                            <x-heroicon-o-user class="w-5 h-5" />
+                            <h1 class="">
+                                {{ session('error') }}
+                            </h1>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div>
-        </form>
     </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('error-message').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 
 </html>

@@ -126,6 +126,11 @@ Route::post('/add_faculty', [AddFacultyController::class, 'insertTeacherUser'])-
 Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
 Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
 
+
+Route::get('/error', function () {
+    return view('error');
+})->name('error');
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {

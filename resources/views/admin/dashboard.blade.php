@@ -35,7 +35,7 @@
                     <div
                         class="flex items-center justify-center text-white rounded-md bg-green-500 hover:bg-green-400 duration-300 py-2 px-12">
                         <x-feathericon-plus class="w-6 h-6" />
-                        <span class="text-xl lowec">Add</span>
+                        <span class="text-xl">Add</span>
                     </div>
                 </a>
             </div>
@@ -46,29 +46,22 @@
                 </div>
             </div>
             <div class="">
-                <div class="flex items-center justify-between border-b-2 border-black/20 bg-secondary p-4">
-                    <h1 class="text-lg">ID</h1>
-                    <h1 class="text-lg">Faculty Name</h1>
-                    <h1 class="text-lg">Email</h1>
-                    <h1 class="text-lg">Actions</h1>
+                <div class="grid grid-cols-4 gap-x-0 gap-y-0 border-b-2 border-black/20 bg-secondary p-4">
+                    <h1 class="text-lg font-medium">Emp ID</h1>
+                    <h1 class="text-lg font-medium">Faculty Name</h1>
+                    <h1 class="text-lg font-medium">Contact</h1>
+                    <h1 class="text-lg font-medium">Actions</h1>
                 </div>
-                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/10">
-                    <h1 class="text-lg">NNMLL102AB</h1>
-                    <h1 class="text-lg">Barry Allen</h1>
-                    <h1 class="text-lg">NNM23MC111@NMAMIT.IN</h1>
-                    <div>
-                        <x-feathericon-edit class="w-5 h-5" />
+                @foreach ($teachers as $teacher)
+                    <div class="grid grid-cols-4 gap-x-0 gap-y-0 py-4 px-3 border-b-2 border-black/10">
+                        <h1 class="text-lg">{{ $teacher->emp_id }}</h1>
+                        <h1 class="text-lg">{{ $teacher->fullname }}</h1>
+                        <h1 class="text-lg">{{ $teacher->contact }}</h1>
+                        <div>
+                            <x-feathericon-edit class="w-5 h-5" />
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center justify-between py-4 px-3 border-b-2 border-black/10">
-                    <h1 class="text-lg">NNMLL102AB</h1>
-                    <h1 class="text-lg">Barry Allen</h1>
-                    <h1 class="text-lg">NNM23MC111@NMAMIT.IN</h1>
-                    <div>
-                        <x-feathericon-edit class="w-5 h-5" />
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </div>
