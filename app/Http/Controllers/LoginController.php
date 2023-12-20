@@ -26,12 +26,12 @@ class LoginController extends Controller
             } else {
                 Auth::logout();
                 session()->flush();
-                return redirect('/');
+                return redirect('/')->with('invalid_student_credential', 'Please visit the admin login page');
             }
         }
 
         // Authentication failed
-        return back()->withErrors(['email' => 'Invalid credentials']);
+        return redirect('/')->with('invalid_student_credential', 'Invalid Credentials');
     }
 
     public function admin_login(Request $request)
@@ -46,9 +46,10 @@ class LoginController extends Controller
             } else {
                 Auth::logout();
                 session()->flush();
-                return redirect('admin');
+                return redirect('admin')->with('invalid_admin_credential', 'Please visit Student Login');
             }
         }
+        return redirect('admin')->with('invalid_admin_credential', 'Invalid Credentials');
     }
 
     public function logout()

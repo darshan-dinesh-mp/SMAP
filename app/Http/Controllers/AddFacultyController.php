@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -27,18 +28,18 @@ class AddFacultyController extends Controller
             $user->password = bcrypt($request->password);
             $user->role = 'teacher';
             $user->save();
-
+            
             $teacher = new Teacher;
             $teacher->emp_id = $request->id;
             $teacher->contact = $request->contact;
             $teacher->fullname = $request->name;
             $teacher->save();
-
             return redirect()->route('admin.dashboard');
+
         } catch (QueryException $exception) {
             $errorCode = $exception->errorInfo[1];
             if ($errorCode == 1062) {
-                return redirect()->route('add-faculty')->with('error', 'User ID already exists.');
+                return redirect()->route('add-faculty')->with('error', 'Emp ID already exists.');
             }
         }
     }

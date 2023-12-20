@@ -57,8 +57,7 @@
                             Email Address
                         </span>
                     </label>
-                    <input type="mail" name="email" class="input-fields" required
-                        placeholder="nnm2xmcxxx@nmamit.in">
+                    <input type="email" name="email" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label animate-shake">
@@ -74,16 +73,32 @@
                     class="text-[1.35rem] bg-primary w-[85%] lg:w-3/4 text-light py-3 px-24 rounded-lg hover:bg-primary/90 cursor-pointer duration-300 font-medium"
                     value="Login">
             </form>
+            <div>
+                @if (session('invalid_credential'))
+                <div id="error-message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                    <div class="flex items-center justify-center space-x-2 text-red-500">
+                        <x-heroicon-o-user class="w-5 h-5" />
+                        <h1 class="">
+                            {{ session('invalid_credential') }}
+                        </h1>
+                    </div>
+                </div>
+                @endif
+            </div>
         </div>
     </div>
     <script>
-        window.addEventListener("scroll", function() {
+        window.addEventListener("scroll", function () {
             var scrollValue = window.scrollY;
             var image = document.getElementById("zoomImage");
 
             var scaleValue = 1 + scrollValue / 1000;
             image.style.transform = "scale(" + scaleValue + ")";
         });
+        
+        setTimeout(function () {
+            document.getElementById('error-message').style.display = 'none';
+        }, 5000);
     </script>
 
 </body>
