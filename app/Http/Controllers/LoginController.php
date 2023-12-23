@@ -29,8 +29,6 @@ class LoginController extends Controller
                 return redirect('/')->with('invalid_student_credential', 'Please visit the admin login page');
             }
         }
-
-        // Authentication failed
         return redirect('/')->with('invalid_student_credential', 'Invalid Credentials');
     }
 

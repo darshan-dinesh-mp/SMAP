@@ -74,12 +74,12 @@
                     value="Login">
             </form>
             <div>
-                @if (session('invalid_credential'))
+                @if (session('invalid_student_credential'))
                 <div id="error-message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
                     <div class="flex items-center justify-center space-x-2 text-red-500">
                         <x-heroicon-o-user class="w-5 h-5" />
                         <h1 class="">
-                            {{ session('invalid_credential') }}
+                            {{ session('invalid_student_credential') }}
                         </h1>
                     </div>
                 </div>
