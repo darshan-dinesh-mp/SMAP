@@ -47,24 +47,20 @@ class FacultyController extends Controller
     public function editFaculty(Request $request)
     {
         $request->validate([
+            'emp_id'=> 'required',
             'name' => 'required',
             'contact' => 'required',
         ]);
 
         try {
-            $teacher = Teacher::find($request->id);
-
-            if (!$teacher) {
-                return redirect()->route('admin.dashboard')->with('error', 'Faculty not found.');
-            }
-            
+            $teacher = Teacher::where('emp_id', $request->emp_id)->first();
             $teacher->contact = $request->contact;
             $teacher->fullname = $request->name;
             $teacher->save();
 
             return redirect()->route('admin.dashboard')->with('success', 'Faculty updated successfully.');
         } catch (QueryException $exception) {
-            return redirect()->route('admin.dashboard')->with('error', 'An error occurred while updating faculty.');
+            return redirect()->route('admin.dashboard')->with('message', 'An error occurred while updating faculty.');
         }
     }
 }

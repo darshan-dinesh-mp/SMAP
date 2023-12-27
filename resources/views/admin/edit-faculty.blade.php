@@ -30,7 +30,7 @@
                             <p class="font-medium pb-2">EMP ID:</p>
                             <input type="text" name="emp_id"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
-                                placeholder="Faculty Number" value="{{$teachers->emp_id}}" disabled>
+                                placeholder="Faculty Number" value="{{$teachers->emp_id}}" readonly>
                         </div>
                         <div>
                             <p class="font-medium pb-2">Faculty Name:</p>
@@ -44,7 +44,6 @@
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
                                 placeholder="XXXXXXXXXX" value="{{$teachers->contact}}" required>
                         </div>
-                        <input type="number" name="id" value="{{$teachers->id}}" hidden>
                         <!-- <div>
                             <p class="font-medium pb-2">Email:</p>
                             <input type="mail" name="email"
