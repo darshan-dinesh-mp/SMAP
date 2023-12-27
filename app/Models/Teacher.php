@@ -11,7 +11,7 @@ class Teacher extends Model
 
     protected $table = "teachers";
     protected $fillable = [
-        'teacher_id',
+        'emp_id',
         'fullname',
         'contact',
     ];

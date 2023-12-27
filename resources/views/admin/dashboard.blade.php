@@ -53,19 +53,47 @@
                     <h1 class="text-lg font-medium">Actions</h1>
                 </div>
                 @foreach ($teachers as $teacher)
-                    <div class="grid grid-cols-4 gap-x-0 gap-y-0 py-4 px-3 border-b-2 border-black/10">
-                        <h1 class="text-lg">{{ $teacher->emp_id }}</h1>
-                        <h1 class="text-lg">{{ $teacher->fullname }}</h1>
-                        <h1 class="text-lg">{{ $teacher->contact }}</h1>
+                <div class="grid grid-cols-4 gap-x-0 gap-y-0 py-4 px-3 border-b-2 border-black/10">
+                    <h1 class="text-lg">{{ $teacher->emp_id }}</h1>
+                    <h1 class="text-lg">{{ $teacher->fullname }}</h1>
+                    <h1 class="text-lg">{{ $teacher->contact }}</h1>
+                    <a href="{{ route('edit-faculty', ['teacher_id' => $teacher->emp_id]) }}">
                         <div>
                             <x-feathericon-edit class="w-5 h-5" />
                         </div>
-                    </div>
+                    </a>
+                </div>
                 @endforeach
             </div>
         </div>
+        <div>
+            @if (session('success'))
+            <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                <div class="flex items-center justify-center space-x-2 text-white">
+                    <x-heroicon-o-user class="w-5 h-5" />
+                    <h1 class="">
+                        {{ session('success') }}
+                    </h1>
+                </div>
+            </div>
+            @endif
+            @if (session('error'))
+            <div id="message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                <div class="flex items-center justify-center space-x-2 text-red-500">
+                    <x-heroicon-o-user class="w-5 h-5" />
+                    <h1 class="">
+                        {{ session('error') }}
+                    </h1>
+                </div>
+            </div>
+            @endif
+        </div>
     </div>
-    </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('message').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 
 </html>

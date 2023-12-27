@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\AddFacultyController;
+use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralFormController;
+use App\Models\Teacher;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -20,7 +21,7 @@ use Psy\Readline\Hoa\Console;
 |
 */
 
-Route::get('/', function () {                                           
+Route::get('/', function () {
     return view('index');
 });
 
@@ -33,7 +34,7 @@ Route::get('/teacher-profile', function () {
     return view('teacher/teacherprofile');
 })->name('teacher-profile');
 
-Route::get('/teacher_dashboard', function () {                                   
+Route::get('/teacher_dashboard', function () {
     if (Session::has('user_id') && Session::get('role') == "teacher") {
         return view('teacher/dashboard');
     } else {
@@ -47,13 +48,18 @@ Route::get('/add-faculty', function () {
     return view('admin/add-faculty');
 })->name('add-faculty');
 
+Route::get('/edit-faculty/{teacher_id}', function ($teacher_id) {
+    $teachers = Teacher::where(['emp_id' => $teacher_id])->first();
+    return view('admin.edit-faculty', compact('teachers'));
+})->name('edit-faculty');
+
 Route::get('/add-student', function () {
     return view('teacher/add-student');
 })->name('add-student');
 
 
 
-Route::get('/student_dashboard', function () {                                   
+Route::get('/student_dashboard', function () {
     if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/dashboard');
     } else {
@@ -119,9 +125,8 @@ Route::get('/mse-two-form', function () {
 
 
 
-
-
-Route::post('/add_faculty', [AddFacultyController::class, 'insertTeacherUser'])->name('add_faculty');
+Route::post('/add_faculty', [FacultyController::class, 'addFaculty'])->name('add_faculty');
+Route::post('/edit_faculty', [FacultyController::class, 'editFaculty'])->name('edit_faculty');
 
 Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
 Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
