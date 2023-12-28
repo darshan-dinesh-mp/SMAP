@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Teacher;
 
-class FacultyController extends Controller
+class AdminController extends Controller
 {
     public function addFaculty(Request $request)
     {

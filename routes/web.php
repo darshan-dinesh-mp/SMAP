@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GeneralFormController;
@@ -30,11 +30,11 @@ Route::get('/admin', function () {
 });
 
 
-Route::get('/teacher-profile', function () {
+Route::get('/profile', function () {
     return view('teacher/teacherprofile');
 })->name('teacher-profile');
 
-Route::get('/teacher_dashboard', function () {
+Route::get('/dashboard', function () {
     if (Session::has('user_id') && Session::get('role') == "teacher") {
         return view('teacher/dashboard');
     } else {
@@ -86,7 +86,11 @@ Route::get('/third-sem-subjects', function () {
 Route::get('/edit-profile', function () {
     if (Session::has('user_id') && Session::get('role') == "student") {
         return view('student/edit-profile');
-    } else {
+    } 
+    else if (Session::has('user_id') && Session::get('role') == "teacher") {
+        return view('teacher/edit-profile');
+    } 
+    else {
         return redirect('/');
     }
 })->name('edit-profile');
@@ -125,8 +129,8 @@ Route::get('/mse-two-form', function () {
 
 
 
-Route::post('/add_faculty', [FacultyController::class, 'addFaculty'])->name('add_faculty');
-Route::post('/edit_faculty', [FacultyController::class, 'editFaculty'])->name('edit_faculty');
+Route::post('/add_faculty', [AdminController::class, 'addFaculty'])->name('add_faculty');
+Route::post('/edit_faculty', [AdminController::class, 'editFaculty'])->name('edit_faculty');
 
 Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
 Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
