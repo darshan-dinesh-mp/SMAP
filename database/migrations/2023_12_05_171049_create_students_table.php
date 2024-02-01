@@ -13,6 +13,7 @@ class CreateStudentsTable extends Migration
             $table->string('student_id')->unique();
             $table->string('fullname');
             $table->integer('contact')->nullable();
+            $table->integer('semester');
             $table->foreign('student_id')->references('user_id')->on('users');
             $table->timestamps();
         });

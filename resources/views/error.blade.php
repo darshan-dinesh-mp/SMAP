@@ -9,7 +9,7 @@
 </head>
 
 <body>
-   
+    Something went wrong. Sorry!
 </body>
 
 </html>
