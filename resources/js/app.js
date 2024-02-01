@@ -6,5 +6,4 @@ window.addEventListener("scroll", function () {
 
     var scaleValue = 1 + scrollValue / 1000;
     image.style.transform = "scale(" + scaleValue + ")";
-    console.log("hello");
 });
