@@ -12,8 +12,7 @@ class CreateFeedbackFormsTable extends Migration
             $table->id();
             $table->string('student_id');
             $table->integer('semester');
-            $table->integer('semester');
-            $table->number('mse');
+            $table->integer('mse');
             // Add other fields related to feedback
             $table->foreign('student_id')->references('student_id')->on('students');
             $table->timestamps();
