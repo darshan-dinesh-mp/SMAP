@@ -51,16 +51,17 @@
                     <h1 class="text-[2rem] lg:text-[3rem] font-medium"> Get Started! </h1>
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
-                    <label for="password" class="label animate-shake">
+                    <label for="password" class="label animate-shakes">
                         <x-heroicon-o-user class="w-4 h-4" />
                         <span>
                             Email Address
                         </span>
                     </label>
-                    <input type="email" name="email" class="input-fields" required placeholder="nnm2xmcxxx@nmamit.in">
+                    <input type="email" name="email" class="input-fields" required
+                        placeholder="nnm2xmcxxx@nmamit.in">
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
-                    <label for="password" class="label animate-shake">
+                    <label for="password" class="label animate-shakes">
                         <x-heroicon-o-lock-closed class="w-4 h-4" />
                         <span>
                             Password
@@ -75,28 +76,29 @@
             </form>
             <div>
                 @if (session('invalid_student_credential'))
-                <div id="error-message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
-                    <div class="flex items-center justify-center space-x-2 text-red-500">
-                        <x-heroicon-o-user class="w-5 h-5" />
-                        <h1 class="">
-                            {{ session('invalid_student_credential') }}
-                        </h1>
+                    <div id="error-message"
+                        class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-2 right-2">
+                        <div class="flex items-center justify-center space-x-2 text-red-500">
+                            <x-heroicon-o-user class="w-5 h-5" />
+                            <h1 class="">
+                                {{ session('invalid_student_credential') }}
+                            </h1>
+                        </div>
                     </div>
-                </div>
                 @endif
             </div>
         </div>
     </div>
     <script>
-        window.addEventListener("scroll", function () {
+        window.addEventListener("scroll", function() {
             var scrollValue = window.scrollY;
             var image = document.getElementById("zoomImage");
 
             var scaleValue = 1 + scrollValue / 1000;
             image.style.transform = "scale(" + scaleValue + ")";
         });
-        
-        setTimeout(function () {
+
+        setTimeout(function() {
             document.getElementById('error-message').style.display = 'none';
         }, 5000);
     </script>

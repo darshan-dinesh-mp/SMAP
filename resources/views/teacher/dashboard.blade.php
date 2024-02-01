@@ -22,7 +22,22 @@
             </a>
         </nav>
         <div class="px-12 py-8">
+            <div class="grid grid-cols-3 grid-rows-1 space-x-6">
+                <a href="#" class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
+                    <x-gmdi-group-add-o class="w-7 h-7" />
+                    <h1 class="text-xl text-semibold">Add Mentees</h1>
+                </a>
+                <a href="#" class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
+                    <x-gmdi-group-add-o class="w-7 h-7" />
+                    <h1 class="text-xl text-semibold">Add Mentees</h1>
+                </a>
+                <a href="#" class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
+                    <x-gmdi-group-add-o class="w-7 h-7" />
+                    <h1 class="text-xl text-semibold">Add Mentees</h1>
+                </a>
+            </div>
             <h1 class="text-2xl font-medium mb-6">Latest Updates</h1>
+
         </div>
     </div>
 </body>
