@@ -105,7 +105,7 @@ Route::get('student-feedback-form', function () {
     $studentName = session('studentName');
     $semester = session('semester');
     $subjects = session('subjects');
-    return view('student/forms/feedback-form',compact('subjects', 'studentName', 'semester'));
+    return view('student/forms/feedback-form')->with(compact('subjects', 'studentName', 'semester'));
 })->name('student-feedback-form');
 
 Route::post('/submit-form', [StudentController::class, 'insert_form_data'])->name('submit-form');

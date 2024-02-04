@@ -8,6 +8,12 @@
 </head>
 
 <body class="font-poppy">
+    <a href="{{ route('student_dashboard') }}" class="flex items-end justify-start space-x-2 text-2xl font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z" />
+        </svg>
+        <span>Profile</span>
+    </a>
     <div class="relative px-0 lg:px-12">
         <nav class="w-full flex items-center justify-between px-4 lg:px-0 py-4">
             <div class="-space-y-3">
@@ -115,22 +121,24 @@
             <div>
                 <h1 class="font-semibold tracking-widest mb-3 text-black/70 uppercase">Give the attendance percentage
                 </h1>
-                <div class="w-2/4 flex flex-col space-y-4 items-center justify-between">
-
-
-                </div>
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div class="w-2/4 flex flex-col space-y-4 items-center justify-between">
-
-                        {{-- @foreach ($subjects as $subject)
+                        @if ($subjects)
+                        @foreach ($subjects as $subject)
                         <div class="w-full flex items-center justify-between">
                             <span class="text-xl font-medium">{{ $subject->subject_name }} :</span>
-                            <input type="number" name="{{ $subject->subject_name }}"
+                            <input type="text" name="{{ $subject->subject_name }}"
                                 class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                                placeholder="00" name="{{ Str::slug($subject->subject_name) }}" id="{{ Str::slug($subject->subject_name) }}">
+                                placeholder="00" name="{{ Str::slug($subject->subject_name) }}"
+                                id="{{ Str::slug($subject->subject_name) }}">
                         </div>
-                        @endforeach --}}
-
+                        @endforeach
+                        @else
+                        @php
+                        header("Location: /student_dashboard");
+                        exit;
+                        @endphp
+                        @endif
                     </div>
                     <div>
                         <p class="font-medium">Any issues in attendance.</p>
