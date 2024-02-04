@@ -55,19 +55,19 @@
                 </a>
                 <a href="{{ route('first-mse-form') }}"
                     class="flex items-center justify-start group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-black/30" viewBox="0 0 448 512">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 448 512">
                         <path fill="currentColor"
                             d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
                     </svg>
-                    <h1 class="font-medium text-xl">Update first MSE Marks</h1>
+                    <h1 class="font-medium text-xl group-hover:text-dark/80">Update first MSE Marks</h1>
                 </a>
                 <a href="{{ route('second-mse-form') }}"
                     class="flex items-center justify-start group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-black/30" viewBox="0 0 448 512">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 448 512">
                         <path fill="currentColor"
                             d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
                     </svg>
-                    <h1 class="font-medium text-xl">Update second MSE Marks</h1>
+                    <h1 class="font-medium text-xl group-hover:text-dark/80">Update second MSE Marks</h1>
                 </a>
 
                 <!-- <div
