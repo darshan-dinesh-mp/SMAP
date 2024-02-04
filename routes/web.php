@@ -104,8 +104,15 @@ Route::get('/redirecting', [StudentController::class, 'fetch'])->name('feedback-
 Route::get('student-feedback-form', function () {
     return view('student/forms/feedback-form');
 })->name('student-feedback-form');
-
 Route::post('/submit-form', [StudentController::class, 'insert_form_data'])->name('submit-form');
+
+Route::get('first-mse-form', function () {
+    return view('student/forms/mse-one-form');
+})->name('first-mse-form');
+
+Route::get('second-mse-form', function () {
+    return view('student/forms/mse-two-form');
+})->name('second-mse-form');
 
 
 
