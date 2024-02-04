@@ -31,6 +31,12 @@
                         class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
                 </a>
+                <a href="#" {{-- href="{{ route('general-form') }}" --}}
+                    class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
+                    <x-heroicon-o-clock
+                        class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
+                    <h1 class="font-medium text-xl group-hover:text-dark/80">First feedback form</h1>
+                </a>
                 <div
                     class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" />
