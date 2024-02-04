@@ -13,7 +13,9 @@
             <div class="-space-y-3">
                 <a href="{{ route('teacher_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z" />
+                    </svg> 
                     <span>
                         Edit Profile
                     </span>

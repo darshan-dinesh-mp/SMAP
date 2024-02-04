@@ -13,12 +13,15 @@
             <div>
                 <a href="{{ route('teacher_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    <x-heroicon-o-arrow-small-left class="w-7 h-7" />
+                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z" />
+                    </svg>
                     <span>Profile</span>
                 </a>
             </div>
             <div id="toggleSidebar" class="cursor-pointer block lg:hidden">
-                <x-coolicon-hamburger-lg class="w-6 h-6" />
+                {{-- <x-coolicon-hamburger-lg class="w-6 h-6" /> --}}
             </div>
         </nav>
         <img src="images/background.png" alt="Cover Photo" class="w-full rounded-none lg:rounded-xl h-64 object-cover">
@@ -36,12 +39,12 @@
                 <div class="hidden lg:flex flex-row space-x-2">
                     <a href="{{ route('edit-profile') }}"
                         class="text-primary hover:bg-secondary group border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                        <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
+                        {{-- <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" /> --}}
                         {{-- <span class="font-medium">Edit Profile</span> --}}
                     </a>
                     <a href="{{ route('logout') }}"
                         class="text-primary hover:bg-secondary border-2 group hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                        <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                        {{-- <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
                         {{-- <span class="font-medium">Edit Profile</span> --}}
                     </a>
                 </div>
