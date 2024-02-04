@@ -30,12 +30,18 @@
         <div class="px-4 lg:px-12 pt-8">
             <h1 class="text-2xl font-medium mb-6">Latest Updates</h1>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-6 w-full">
-                <!-- <a href="#" {{-- href="{{ route('general-form') }}" --}}
+                <a href="#" {{-- href="{{ route('general-form') }}" --}}
                     class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     {{-- <x-heroicon-o-clock
                         class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" /> --}}
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M464 256a208 208 0 1 1-416 0a208 208 0 1 1 416 0M0 256a256 256 0 1 0 512 0a256 256 0 1 0-512 0m232-136v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24" />
+                    </svg>
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
-                </a> -->
+                </a>
                 <a href="{{ route('general-form') }}"
                     class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
 
