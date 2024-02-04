@@ -22,7 +22,8 @@
         </nav>
     </div>
     <div class="flex items-center justify-center flex-col">
-        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}" method="post">
+        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}"
+            method="post">
             @csrf
             {{-- <h1 class="text-3xl font-semibold">General Form</h1> --}}
             <div>
@@ -122,14 +123,15 @@
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div class="w-2/4 flex flex-col space-y-4 items-center justify-between">
 
-                        {{-- @foreach ($subjects as $subject)
-                        <div class="w-full flex items-center justify-between">
-                            <span class="text-xl font-medium">{{ $subject->subject_name }} :</span>
-                            <input type="number" name="{{ $subject->subject_name }}"
-                                class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                                placeholder="00" name="{{ Str::slug($subject->subject_name) }}" id="{{ Str::slug($subject->subject_name) }}">
-                        </div>
-                        @endforeach --}}
+                        @foreach ($subjects as $subject)
+                            <div class="w-full flex items-center justify-between">
+                                <span class="text-xl font-medium">{{ $subject->subject_name }} :</span>
+                                <input type="number" name="{{ $subject->subject_name }}"
+                                    class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
+                                    placeholder="00" name="{{ Str::slug($subject->subject_name) }}"
+                                    id="{{ Str::slug($subject->subject_name) }}">
+                            </div>
+                        @endforeach
 
                     </div>
                     <div>
