@@ -51,7 +51,7 @@
                         <path fill="currentColor"
                             d="M464 256a208 208 0 1 1-416 0a208 208 0 1 1 416 0M0 256a256 256 0 1 0 512 0a256 256 0 1 0-512 0m232-136v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24" />
                     </svg>
-                    <h1 class="font-medium text-xl group-hover:text-dark/80">First feedback form</h1>
+                    <h1 class="font-medium text-xl group-hover:text-dark/80">Performance Feedback form</h1>
                 </a>
                 <a href="{{ route('first-mse-form') }}"
                     class="flex items-center justify-start group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
@@ -171,7 +171,25 @@
                 </a>
             </div>
         </div> --}}
+        <div>
+
+            @if (session('success'))
+            <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                <div class="flex items-center justify-center space-x-2 text-white">
+                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
+                    <h1 class="">
+                        {{ session('success') }}
+                    </h1>
+                </div>
+            </div>
+            @endif
+        </div>
     </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('message').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 
 </html>

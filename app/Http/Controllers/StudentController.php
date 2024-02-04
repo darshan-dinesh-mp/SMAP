@@ -14,8 +14,28 @@ class StudentController extends Controller
         // Retrieve student details from session
         $studentName = Session::get('student_name');
         $sem = Session::get('current_semester');
+        $pending_feedback_number = Session::get('pending_feedback_number');
         $subjects = Subject::where('semester_number', $sem)->get();
 
+        $formNumber = FeedbackForm::where('student_id', session('user_id'))
+            ->where('semester', session('current_semester'))
+            ->select('form_number')
+            ->get();
+        if ($formNumber->isNotEmpty()) {
+            $maxFormNumber = $formNumber->max('form_number');
+            if ($maxFormNumber == 3) {
+                return redirect()->route('student_dashboard')->with('success', 'No performance feedback form pending');
+            }
+            if ($maxFormNumber == 2) {
+                session(['pending_feedback_number' => 3]);
+            }
+            if ($maxFormNumber == 1) {
+                session(['pending_feedback_number' => 2]);
+            }
+        } else {
+            session(['pending_feedback_number' => 1]);
+        }
+            
         if ($subjects->isEmpty()) {
             dd($sem);
             return redirect()->route('student_dashboard');
@@ -49,7 +69,7 @@ class StudentController extends Controller
 
         // Store the form data in the database
         $feedbackForm = new FeedbackForm();
-        $feedbackForm->form_number = session('pending_form_number');
+        $feedbackForm->form_number = session('pending_feedback_number');
         $feedbackForm->student_id = session('user_id');
         $feedbackForm->semester = session('current_semester');
         $feedbackForm->field1 = $request->input('field1');

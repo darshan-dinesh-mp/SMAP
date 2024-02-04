@@ -28,20 +28,19 @@
         </nav>
     </div>
     <div class="flex items-center justify-center flex-col">
-        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}"
-            method="post">
+        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}" method="post">
             @csrf
-            {{-- <h1 class="text-3xl font-semibold">General Form</h1> --}}
+            <h1 class="text-3xl font-semibold">Performance Feedback {{ session('pending_feedback_number') }}</h1>
             <div>
                 <h1 class="font-semibold tracking-widest mb-3 text-black/70">MENTOR INFO</h1>
                 <div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">Name of Mentor:</span>
-                        <span class="font-semibold">Diana</span>
+                        <span class="font-semibold">{{ session('mentor_name') }}</span>
                     </div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">Designation:</span>
-                        <span class="font-semibold">Assistant Professor</span>
+                        <span class="font-semibold">{{ session('designation') }}</span>
                     </div>
                 </div>
             </div>

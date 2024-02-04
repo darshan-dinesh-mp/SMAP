@@ -24,27 +24,31 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('students.*')
                     ->first();
+                $mentor_details=Teacher::join('mentorship', 'teachers.emp_id', '=', 'mentorship.mentor_id')
+                ->where('mentorship.mentee_id', $user->user_id)
+                ->select('teachers.*')
+                ->first();
 
-                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester]);
-
-                $formNumber = FeedbackForm::where('student_id', $user->user_id)
+                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester, 'mentor_name'=>$mentor_details->fullname,  'designation'=>$mentor_details->designation]);
+                // session(['pending_feedback_number' => 0]);
+                $formNumber = FeedbackForm::where('student_id', session('user_id'))
                     ->where('semester', session('current_semester'))
                     ->select('form_number')
                     ->get();
-                if (!empty($formNumber)) {
+                if ($formNumber->isNotEmpty()) {
                     $maxFormNumber = $formNumber->max('form_number');
                     if ($maxFormNumber == 3) {
-                        session(['pending_form_number' => 0]);
+                        session(['pending_feedback_number' => 0]);
                         return redirect()->route('student.dashboard');
                     }
                     if ($maxFormNumber == 2) {
-                        session(['pending_form_number' => 3]);
+                        session(['pending_feedback_number' => 3]);
                     }
                     if ($maxFormNumber == 1) {
-                        session(['pending_form_number' => 2]);
+                        session(['pending_feedback_number' => 2]);
                     }
                 } else {
-                    session(['pending_form_number' => 1]);
+                    session(['pending_feedback_number' => 1]);
                 }
                 // Redirect students to the student dashboard
                 return redirect()->route('student.dashboard');
