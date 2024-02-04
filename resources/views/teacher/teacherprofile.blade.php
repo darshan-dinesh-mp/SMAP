@@ -77,7 +77,7 @@
                 <h1 class="font-semibold tracking-widest text-black/70">OBJECTIVES</h1>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
                     <a 
-                    {{-- href="{{ route('general-form') }}" --}}
+                    {{-- href="{{ route('feedback-form') }}" --}}
                         class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                         {{-- <x-heroicon-o-clock
                             class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" /> --}}

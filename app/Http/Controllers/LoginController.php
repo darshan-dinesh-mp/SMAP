@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use BladeUIKit\Components\Buttons\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Student;
 
 class LoginController extends Controller
 {
@@ -18,6 +18,8 @@ class LoginController extends Controller
             session(['user_id' => $user->id, 'role' => $user->role]);
 
             if ($user->isStudent()) {
+                $student = new Student;
+                session(['student_name' => $student->fullname, 'semester' => $student->semester]);
                 // Redirect students to the student dashboard
                 return redirect()->route('student.dashboard');
             } elseif ($user->isTeacher()) {

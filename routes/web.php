@@ -100,7 +100,11 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/student-general-form', [StudentController::class, 'fetch'])->name('general-form');
+Route::get('/redirecting', [StudentController::class, 'fetch'])->name('feedback-form');
+Route::get('student-feedback-form', function () {
+    return view('student/forms/feedback-form');
+})->name('student-feedback-form');
+
 Route::post('/submit-form', [StudentController::class, 'insert_form_data'])->name('submit-form');
 
 
