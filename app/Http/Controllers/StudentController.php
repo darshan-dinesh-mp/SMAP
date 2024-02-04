@@ -11,8 +11,12 @@ class StudentController extends Controller
     {
         // Retrieve student details from session
         $studentName = Session::get('student_name');
+        $semester = Session::get('semester');
 
         // Pass student name to the view
-        return view('student-general-form', ['studentName' => $studentName]);
+        return redirect()->route('student-feedback-form')->with([
+            'studentName' => $studentName,
+            'semester' => $semester,
+        ]);
     }
 }
