@@ -13,12 +13,17 @@
             <div>
                 <a href="{{ route('student_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8l8 8l1.41-1.41L7.83 13H20z" />
+                    </svg>
                     <span>Profile</span>
                 </a>
             </div>
             <div id="toggleSidebar" class="cursor-pointer block lg:hidden">
-                {{-- <x-coolicon-hamburger-lg class="w-6 h-6" /> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5" d="M2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5" />
+                </svg>
             </div>
         </nav>
         <img src="images/background.png" alt="Cover Photo" class="w-full rounded-none lg:rounded-xl h-64 object-cover">
@@ -36,12 +41,21 @@
                 <div class="hidden lg:flex flex-row space-x-2">
                     <a href="{{ route('edit-profile') }}"
                         class="text-primary hover:bg-secondary group border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                        {{-- <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:scale-[1.08] duration-300"
+                            viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 4H7.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C4 5.52 4 6.08 4 7.2v9.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h9.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.987.218-2.105V14m-4-9l-6 6v3h3l6-6m-3-3l3-3l3 3l-3 3m-3-3l3 3" />
+                        </svg>
                         {{-- <span class="font-medium">Edit Profile</span> --}}
                     </a>
                     <a href="{{ route('logout') }}"
                         class="text-primary hover:bg-secondary border-2 group hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                        {{-- <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:translate-x-1 duration-300"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z" />
+                        </svg>
                         {{-- <span class="font-medium">Edit Profile</span> --}}
                     </a>
                 </div>
@@ -76,21 +90,30 @@
             <div class="space-y-4">
                 <h1 class="font-semibold tracking-widest text-black/70">OBJECTIVES</h1>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
-                    <a 
-                    {{-- href="{{ route('feedback-form') }}" --}}
+                    <a {{-- href="{{ route('general-form') }}" --}}
                         class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        {{-- <x-heroicon-o-clock
-                            class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300"
+                            viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M464 256a208 208 0 1 1-416 0a208 208 0 1 1 416 0M0 256a256 256 0 1 0 512 0a256 256 0 1 0-512 0m232-136v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24" />
+                        </svg>
                         <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
                     </a>
                     <div
                         class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        {{-- <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-black/30" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
+                        </svg>
                         <h1 class="font-medium text-xl text-dark/30">Update first MSE Marks</h1>
                     </div>
                     <div
                         class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        {{-- <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-black/30" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
+                        </svg>
                         <h1 class="font-medium text-xl text-dark/30">Update second MSE Marks</h1>
                     </div>
                 </div>
@@ -101,14 +124,27 @@
             class="fixed flex items-center justify-center space-y-8 flex-col inset-y-0 left-0 z-50 w-full bg-dark/80 text-white p-4 transform -translate-x-full transition-transform ease-in-out">
             <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
                 {{-- <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" /> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:scale-[1.08] duration-300"
+                    viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 4H7.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C4 5.52 4 6.08 4 7.2v9.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h9.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.987.218-2.105V14m-4-9l-6 6v3h3l6-6m-3-3l3-3l3 3l-3 3m-3-3l3 3" />
+                </svg>
                 <span class="font-medium">Edit Profile</span>
             </a>
             <a href="{{ route('logout') }}" class="flex text-xl space-x-3">
-                {{-- <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:translate-x-1 duration-300"
+                    viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z" />
+                </svg>
                 <span class="font-medium">Log Out</span>
             </a>
             <div id="closeSidebar" class="flex text-xl space-x-3 cursor-pointer">
                 {{-- <x-heroicon-m-x-mark class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:translate-x-1 duration-300" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z" />
+                </svg>
                 {{-- <span class="font-medium">Close</span> --}}
             </div>
         </div>

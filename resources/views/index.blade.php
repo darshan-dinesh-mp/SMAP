@@ -33,6 +33,10 @@
                         </span>
                         {{-- <x-heroicon-m-chevron-right class="h-5 w-5" /> --}}
                         {{-- <x-heroicon-o-arrow-right /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -43,7 +47,11 @@
                 @csrf
                 <div class="flex flex-col items-center -space-y-1 lg:-space-y-3 justify-center">
                     <h2 class="text-[1rem] flex justify-center items-center space-x-2 lg:text-[1.3rem]">
-                        {{-- <x-heroicon-s-users class="w-5 h-5" /> --}}
+                        {{-- <x-heroicon-s-users  /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M224 256a128 128 0 1 0 0-256a128 128 0 1 0 0 256m-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7c0-98.5-79.8-178.3-178.3-178.3z" />
+                        </svg>
                         <span>
                             Student & Staff Login
                         </span>
@@ -52,7 +60,12 @@
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label animate-shakes">
-                        {{-- <x-heroicon-o-user class="w-4 h-4" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="6" r="4" />
+                                <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
+                            </g>
+                        </svg>
                         <span>
                             Email Address
                         </span>
@@ -62,7 +75,11 @@
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label animate-shakes">
-                        {{-- <x-heroicon-o-lock-closed class="w-4 h-4" /> --}}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25" />
+                        </svg>
                         <span>
                             Password
                         </span>
