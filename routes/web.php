@@ -103,7 +103,7 @@ Route::get('/redirecting', [StudentController::class, 'fetch'])->name('feedback-
 
 Route::get('student-feedback-form', function () {
     $studentName = session('studentName');
-    $semester = session('semester');
+    $semester = session('current_semester');
     $subjects = session('subjects');
     return view('student/forms/feedback-form')->with(compact('subjects', 'studentName', 'semester'));
 })->name('student-feedback-form');

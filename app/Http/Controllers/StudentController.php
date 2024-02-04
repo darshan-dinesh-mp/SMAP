@@ -12,7 +12,7 @@ class StudentController extends Controller
     {
         // Retrieve student details from session
         $studentName = Session::get('student_name');
-        $sem = Session::get('semester');
+        $sem = Session::get('current_semester');
         $subjects = Subject::where('semester_number', $sem)->get();
         
         if ($subjects->isEmpty()) {

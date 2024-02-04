@@ -23,7 +23,7 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('students.*')
                     ->first();
-                session(['user_id'=>$student->student_id, 'role'=>$user->role, 'student_name' => $student->fullname, 'semester' => $student->semester, 'email'=>$credentials['email']]);
+                session(['user_id'=>$student->student_id, 'role'=>$user->role, 'student_name' => $student->fullname, 'contact'=>$student->contact, 'email'=>$credentials['email'], 'current_semester'=>$student->semester]);
                 // Redirect students to the student dashboard
                 return redirect()->route('student.dashboard');
             } elseif ($user->isTeacher()) {
