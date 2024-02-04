@@ -13,7 +13,7 @@
             <div class="-space-y-3">
                 <a href="{{ route('teacher_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    <x-heroicon-o-arrow-small-left class="w-7 h-7" />
+                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
                     <span>
                         Edit Profile
                     </span>
@@ -30,7 +30,7 @@
                     <input type="file" id="fileInput" class="hidden" />
                     <label for="fileInput"
                         class="p-2 lg:p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
-                        <x-heroicon-s-camera class="w-5 lg:w-6 h-5 lg:h-6" />
+                        {{-- <x-heroicon-s-camera class="w-5 lg:w-6 h-5 lg:h-6" /> --}}
                     </label>
                 </div>
 

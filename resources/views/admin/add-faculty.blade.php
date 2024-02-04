@@ -13,7 +13,7 @@
             <div class="-space-y-3">
                 <a href="{{ route('admin.dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    <x-heroicon-o-arrow-small-left class="w-7 h-7" />
+                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
                     <span>
                         Add Faculty
                     </span>
@@ -67,7 +67,7 @@
                 @if (session('error'))
                     <div id="error-message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
                         <div class="flex items-center justify-center space-x-2 text-red-500">
-                            <x-heroicon-o-user class="w-5 h-5" />
+                            {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
                             <h1 class="">
                                 {{ session('error') }}
                             </h1>

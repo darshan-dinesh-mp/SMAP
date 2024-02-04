@@ -79,18 +79,18 @@
                     <a 
                     {{-- href="{{ route('general-form') }}" --}}
                         class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        <x-heroicon-o-clock
-                            class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
+                        {{-- <x-heroicon-o-clock
+                            class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" /> --}}
                         <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
                     </a>
                     <div
                         class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" />
+                        {{-- <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" /> --}}
                         <h1 class="font-medium text-xl text-dark/30">Update first MSE Marks</h1>
                     </div>
                     <div
                         class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" />
+                        {{-- <x-heroicon-s-lock-closed class="w-7 h-7 text-black/30" /> --}}
                         <h1 class="font-medium text-xl text-dark/30">Update second MSE Marks</h1>
                     </div>
                 </div>
@@ -100,15 +100,15 @@
         <div id="sidebar"
             class="fixed flex items-center justify-center space-y-8 flex-col inset-y-0 left-0 z-50 w-full bg-dark/80 text-white p-4 transform -translate-x-full transition-transform ease-in-out">
             <a href="{{ route('edit-profile') }}" class="flex text-xl space-x-3">
-                <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" />
+                {{-- <x-heroicon-m-pencil-square class="w-6 h-6 group-hover:scale-[1.08] duration-300" /> --}}
                 <span class="font-medium">Edit Profile</span>
             </a>
             <a href="{{ route('logout') }}" class="flex text-xl space-x-3">
-                <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                {{-- <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
                 <span class="font-medium">Log Out</span>
             </a>
             <div id="closeSidebar" class="flex text-xl space-x-3 cursor-pointer">
-                <x-heroicon-m-x-mark class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                {{-- <x-heroicon-m-x-mark class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
                 {{-- <span class="font-medium">Close</span> --}}
             </div>
         </div>

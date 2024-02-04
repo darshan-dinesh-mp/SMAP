@@ -12,7 +12,7 @@
         <nav class=" w-full flex items-center justify-between px-4 lg:px-0 py-4">
             <div class="-space-y-3">
                 <a class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    <x-heroicon-o-arrow-small-left class="w-7 h-7" />
+                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
                     <span>
                         Add Student
                     </span>
