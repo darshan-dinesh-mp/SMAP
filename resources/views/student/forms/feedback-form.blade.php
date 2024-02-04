@@ -22,7 +22,8 @@
         </nav>
     </div>
     <div class="flex items-center justify-center flex-col">
-        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}" method="post">
+        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}"
+            method="post">
             @csrf
             {{-- <h1 class="text-3xl font-semibold">General Form</h1> --}}
             <div>
@@ -59,12 +60,14 @@
                     <div>
                         <p class="font-medium">Are you having any difficulty in understanding
                             the concepts? If so give details.</p>
-                        <input type="text" name="field1" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field1"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" name="field2" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field2"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -85,12 +88,14 @@
                     <div>
                         <p class="font-medium">Are you having any difficulty in implementing the
                             concepts in the lab? If so give details.</p>
-                        <input type="text" name="field4" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field4"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" name="field5" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field5"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -113,24 +118,19 @@
                 </h1>
                 <div class="w-2/4 flex flex-col space-y-4 items-center justify-between">
 
-                    @foreach ($subjects as $subject)
-                    <div class="w-full flex items-center justify-between">
-                        <span class="text-xl font-medium">{{ $subject }} :</span>
-                        <input type="number" name="{{ $subject }}" class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
-                            placeholder="00" name="{{ Str::slug($subject) }}" id="{{ Str::slug($subject) }}">
-                    </div>
-                    @endforeach
 
                 </div>
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div>
                         <p class="font-medium">Any issues in attendance.</p>
-                        <input type="text" name="field7" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field7"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" name="field8" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field8"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -150,12 +150,14 @@
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div>
                         <p class="font-medium">Any other issue.</p>
-                        <input type="text" name="field10" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field10"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
                         <p class="font-medium">Action taken</p>
-                        <input type="text" name="field11" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                        <input type="text" name="field11"
+                            class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                             placeholder="type your text here. ">
                     </div>
                     <div>
@@ -176,11 +178,10 @@
             <div>
                 <h1 class="font-semibold tracking-widest mb-3 uppercase text-black/70">Projects involved</h1>
                 <div class="space-y-4">
-                    <input type="text" name="field13" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
+                    <input type="text" name="field13"
+                        class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
                         placeholder="project one">
 
-                    <input type="text" name="field14" class="input border-b-2 outline-none w-2/4 border-primary py-2 pl-2 mt-2"
-                        placeholder="project two">
                 </div>
             </div>
 
