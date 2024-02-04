@@ -3,7 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\GeneralFormController;
+use App\Http\Controllers\StudentController;
 use App\Models\Teacher;
 
 use Illuminate\Support\Facades\Route;
@@ -100,8 +100,8 @@ Route::get('/edit-profile', function () {
 
 
 
-// Route::get('/student-general-form', [GeneralFormController::class, 'fetch'])->name('general-form');
-// Route::post('/submit-form', [GeneralFormController::class, 'insert_form_data'])->name('submit-form');
+Route::get('/student-general-form', [StudentController::class, 'fetch'])->name('general-form');
+Route::post('/submit-form', [StudentController::class, 'insert_form_data'])->name('submit-form');
 
 
 

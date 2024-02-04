@@ -25,13 +25,13 @@
         <div class="px-4 lg:px-12 pt-8">
             <h1 class="text-2xl font-medium mb-6">Latest Updates</h1>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-6 w-full">
-                <a href="#" {{-- href="{{ route('general-form') }}" --}}
+                <!-- <a href="#" {{-- href="{{ route('general-form') }}" --}}
                     class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-heroicon-o-clock
                         class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
-                </a>
-                <a href="#" {{-- href="{{ route('general-form') }}" --}}
+                </a> -->
+                <a href="{{ route('general-form') }}"
                     class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-heroicon-o-clock
                         class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300" />
@@ -48,11 +48,11 @@
                     <h1 class="font-medium text-xl text-dark/30">Update second MSE Marks</h1>
                 </div>
 
-                <div
+                <!-- <div
                     class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-tni-tick-circle class="w-7 h-7 text-green-500 duration-300" />
                     <h1 class="font-medium text-xl text-green-500">Complete your profile!</h1>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="px-4 lg:px-12 py-8">
