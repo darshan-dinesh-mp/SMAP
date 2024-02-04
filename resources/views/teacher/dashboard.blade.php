@@ -16,7 +16,7 @@
             <a href="{{ route('teacher-profile') }}">
                 <div
                     class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                    <x-heroicon-o-user class="w-6 h-6" />
+                    {{-- <x-heroicon-o-user class="w-6 h-6" /> --}}
                     <span class="font-medium hidden lg:block">Alfred Pennyworth</span>
                 </div>
             </a>
@@ -24,15 +24,15 @@
         <div class="px-12 py-8">
             <div class="grid grid-cols-3 grid-rows-1 space-x-6">
                 <a href="#" class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
-                    <x-gmdi-group-add-o class="w-7 h-7" />
+                    {{-- <x-gmdi-group-add-o class="w-7 h-7" /> --}}
                     <h1 class="text-xl text-semibold">Add Mentees</h1>
                 </a>
                 <a href="#" class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
-                    <x-gmdi-group-add-o class="w-7 h-7" />
+                    {{-- <x-gmdi-group-add-o class="w-7 h-7" /> --}}
                     <h1 class="text-xl text-semibold">Add Mentees</h1>
                 </a>
                 <a href="#" class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
-                    <x-gmdi-group-add-o class="w-7 h-7" />
+                    {{-- <x-gmdi-group-add-o class="w-7 h-7" /> --}}
                     <h1 class="text-xl text-semibold">Add Mentees</h1>
                 </a>
             </div>

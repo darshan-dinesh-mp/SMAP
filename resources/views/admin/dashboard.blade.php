@@ -21,7 +21,7 @@
                 </div> --}}
                 <a href="{{ route('logout') }}"
                     class="text-primary hover:bg-secondary border-2 group hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-3 space-x-1">
-                    <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" />
+                    {{-- <x-feathericon-log-out class="w-6 h-6 group-hover:translate-x-1 duration-300" /> --}}
                     {{-- <span class="font-medium">Edit Profile</span> --}}
                 </a>
             </div>
@@ -34,14 +34,14 @@
                 <a href="{{ route('add-faculty') }}">
                     <div
                         class="flex items-center justify-center text-white rounded-md bg-green-500 hover:bg-green-400 duration-300 py-2 px-12">
-                        <x-feathericon-plus class="w-6 h-6" />
+                        {{-- <x-feathericon-plus class="w-6 h-6" /> --}}
                         <span class="text-xl">Add</span>
                     </div>
                 </a>
             </div>
             <div>
                 <div class="flex items-center space-x-1 pb-3">
-                    <x-heroicon-o-user class="w-5 h-5" />
+                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
                     <h1 class="text-xl font-medium">All Facutlies</h1>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <h1 class="text-lg">{{ $teacher->contact }}</h1>
                     <a href="{{ route('edit-faculty', ['teacher_id' => $teacher->emp_id]) }}">
                         <div>
-                            <x-feathericon-edit class="w-5 h-5" />
+                            {{-- <x-feathericon-edit class="w-5 h-5" /> --}}
                         </div>
                     </a>
                 </div>
@@ -70,7 +70,7 @@
             @if (session('success'))
             <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
                 <div class="flex items-center justify-center space-x-2 text-white">
-                    <x-heroicon-o-user class="w-5 h-5" />
+                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
                     <h1 class="">
                         {{ session('success') }}
                     </h1>
@@ -80,7 +80,7 @@
             @if (session('error'))
             <div id="message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
                 <div class="flex items-center justify-center space-x-2 text-red-500">
-                    <x-heroicon-o-user class="w-5 h-5" />
+                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
                     <h1 class="">
                         {{ session('error') }}
                     </h1>

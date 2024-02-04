@@ -31,7 +31,7 @@
                     <a href="#login-screen" class="font-mono lg:hidden flex items-center space-x-2">
                         <span>Login to your account
                         </span>
-                        <x-heroicon-m-chevron-right class="h-5 w-5" />
+                        {{-- <x-heroicon-m-chevron-right class="h-5 w-5" /> --}}
                         {{-- <x-heroicon-o-arrow-right /> --}}
                     </a>
                 </div>
@@ -43,7 +43,7 @@
                 @csrf
                 <div class="flex flex-col items-center -space-y-1 lg:-space-y-3 justify-center">
                     <h2 class="text-[1rem] flex justify-center items-center space-x-2 lg:text-[1.3rem]">
-                        <x-heroicon-s-users class="w-5 h-5" />
+                        {{-- <x-heroicon-s-users class="w-5 h-5" /> --}}
                         <span>
                             Student & Staff Login
                         </span>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label animate-shakes">
-                        <x-heroicon-o-user class="w-4 h-4" />
+                        {{-- <x-heroicon-o-user class="w-4 h-4" /> --}}
                         <span>
                             Email Address
                         </span>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="flex flex-col w-[85%] lg:w-3/4">
                     <label for="password" class="label animate-shakes">
-                        <x-heroicon-o-lock-closed class="w-4 h-4" />
+                        {{-- <x-heroicon-o-lock-closed class="w-4 h-4" /> --}}
                         <span>
                             Password
                         </span>
@@ -79,7 +79,7 @@
                     <div id="error-message"
                         class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-2 right-2">
                         <div class="flex items-center justify-center space-x-2 text-red-500">
-                            <x-heroicon-o-user class="w-5 h-5" />
+                            {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
                             <h1 class="">
                                 {{ session('invalid_student_credential') }}
                             </h1>

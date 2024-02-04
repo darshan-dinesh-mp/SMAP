@@ -13,7 +13,7 @@
             <div class="-space-y-3">
                 <a href="{{ route('student-profile') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    <x-heroicon-o-arrow-small-left class="w-7 h-7" />
+                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
                     <span>
                         Edit Profile
                     </span>
@@ -30,7 +30,7 @@
                     <input type="file" id="fileInput" class="hidden" />
                     <label for="fileInput"
                         class="p-2 lg:p-3 bottom-3 right-3 bg-light cursor-pointer text-primary hover:bg-secondary absolute z-10 rounded-full">
-                        <x-heroicon-s-camera class="w-5 lg:w-6 h-5 lg:h-6" />
+                        {{-- <x-heroicon-s-camera class="w-5 lg:w-6 h-5 lg:h-6" /> --}}
                     </label>
                 </div>
 
@@ -56,40 +56,40 @@
                         <span>
                             Programming
                         </span>
-                        <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Dancing
                         </span>
-                        <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Reading
                         </span>
-                        <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Traveling
                         </span>
-                        <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Photography </span>
-                        <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Gaming </span>
-                        <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-x-mark class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                 </div>
                 <h1 class="font-semibold tracking-widest text-black/70">ADD NEW</h1>
@@ -99,40 +99,40 @@
                         <span>
                             Programming
                         </span>
-                        <x-heroicon-m-plus class="w-5 h-5 hover:text-red-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-plus class="w-5 h-5 hover:text-red-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Dancing
                         </span>
-                        <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Reading
                         </span>
-                        <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Traveling
                         </span>
-                        <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Photography </span>
-                        <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" /> --}}
                     </span>
                     <span
                         class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
                         <span>
                             Gaming </span>
-                        <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" />
+                        {{-- <x-heroicon-m-plus class="w-5 h-5 hover:text-green-600 cursor-pointer" /> --}}
                     </span>
                 </div>
             </div>

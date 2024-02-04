@@ -13,7 +13,7 @@
             <div class="-space-y-3">
                 <a href="{{ route('student_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
-                    <x-heroicon-o-arrow-small-left class="w-7 h-7" />
+                    {{-- <x-heroicon-o-arrow-small-left class="w-7 h-7" /> --}}
                     <span>
                         Complete your profile!
                     </span>
