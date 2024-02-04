@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\FeedbackForm;
 
 class LoginController extends Controller
 {
@@ -23,7 +24,28 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('students.*')
                     ->first();
-                session(['user_id'=>$student->student_id, 'role'=>$user->role, 'student_name' => $student->fullname, 'contact'=>$student->contact, 'email'=>$credentials['email'], 'current_semester'=>$student->semester]);
+
+                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester]);
+
+                $formNumber = FeedbackForm::where('student_id', $user->user_id)
+                    ->where('semester', session('current_semester'))
+                    ->select('form_number')
+                    ->get();
+                if (!empty($formNumber)) {
+                    $maxFormNumber = $formNumber->max('form_number');
+                    if ($maxFormNumber == 3) {
+                        session(['pending_form_number' => 0]);
+                        return redirect()->route('student.dashboard');
+                    }
+                    if ($maxFormNumber == 2) {
+                        session(['pending_form_number' => 3]);
+                    }
+                    if ($maxFormNumber == 1) {
+                        session(['pending_form_number' => 2]);
+                    }
+                } else {
+                    session(['pending_form_number' => 1]);
+                }
                 // Redirect students to the student dashboard
                 return redirect()->route('student.dashboard');
             } elseif ($user->isTeacher()) {
@@ -32,7 +54,7 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('teachers.*')
                     ->first();
-                session(['user_id'=>$teacher->emp_id, 'role'=>$user->role, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'email'=>$credentials['email']]);
+                session(['user_id' => $teacher->emp_id, 'role' => $user->role, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'email' => $credentials['email']]);
                 // Redirect teachers to the teacher dashboard
                 return redirect()->route('teacher.dashboard');
             } else {

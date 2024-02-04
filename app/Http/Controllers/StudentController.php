@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Subject;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\Models\FeedbackForm;
 
 class StudentController extends Controller
 {
@@ -47,13 +48,24 @@ class StudentController extends Controller
         ]);
 
         // Store the form data in the database
-        $performanceFeedback = new PerformanceFeedback();
-        $performanceFeedback->student_id = session('user_id');
-        $performanceFeedback->semester = session('semester');
-        $performanceFeedback->field1 = $request->input('field1');
-        $performanceFeedback->field2 = $request->input('field2');
-        // Assign values for other fields
-        $performanceFeedback->save();
+        $feedbackForm = new FeedbackForm();
+        $feedbackForm->form_number = session('pending_form_number');
+        $feedbackForm->student_id = session('user_id');
+        $feedbackForm->semester = session('current_semester');
+        $feedbackForm->field1 = $request->input('field1');
+        $feedbackForm->field2 = $request->input('field2');
+        $feedbackForm->field3 = $request->input('field3');
+        $feedbackForm->field4 = $request->input('field4');
+        $feedbackForm->field5 = $request->input('field5');
+        $feedbackForm->field6 = $request->input('field6');
+        $feedbackForm->field7 = $request->input('field7');
+        $feedbackForm->field8 = $request->input('field8');
+        $feedbackForm->field9 = $request->input('field9');
+        $feedbackForm->field10 = $request->input('field10');
+        $feedbackForm->field11 = $request->input('field11');
+        $feedbackForm->field12 = $request->input('field12');
+        $feedbackForm->field13 = $request->input('field13');
+        $feedbackForm->save();
 
         // Redirect back with success message or to another page
         return redirect()->back()->with('success', 'Feedback submitted successfully!');
