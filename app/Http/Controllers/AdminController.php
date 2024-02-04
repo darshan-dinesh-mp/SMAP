@@ -15,6 +15,7 @@ class AdminController extends Controller
         $request->validate([
             'id' => 'required',
             'name' => 'required',
+            'designation' => 'required',
             'email' => 'required',
             'contact' => 'required',
             'password' => 'required',
@@ -31,8 +32,10 @@ class AdminController extends Controller
 
             $teacher = new Teacher;
             $teacher->emp_id = $request->id;
-            $teacher->contact = $request->contact;
             $teacher->fullname = $request->name;
+            $teacher->designation = $request->designation;
+            $teacher->email = $request->email;
+            $teacher->contact = $request->contact;
             $teacher->save();
             return redirect()->route('admin.dashboard')->with('success', 'Faculty added successfully.');
 

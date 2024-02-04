@@ -23,7 +23,7 @@
                             <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
                         </g>
                     </svg>
-                    <span class="font-medium hidden lg:block">Alfred Pennyworth</span>
+                    <span class="font-medium hidden lg:block">{{ session('faculty_name') }}</span>
                 </div>
             </a>
         </nav>

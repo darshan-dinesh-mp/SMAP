@@ -22,8 +22,8 @@
                             <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
                         </g>
                     </svg>
-                    <span class="font-medium hidden lg:block">Bruce Wayne</span>
-                    {{-- <span class="text-lg">NNM23MC111</span> --}}
+                    <span class="font-medium hidden lg:block">{{ session('student_name') }}</span>
+                    {{-- <span class="text-lg">{{ session('user_id') }}</span> --}}
                 </div>
             </a>
         </nav>

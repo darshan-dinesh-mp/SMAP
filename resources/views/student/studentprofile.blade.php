@@ -35,8 +35,8 @@
             </div>
             <div class="flex items-end justify-between w-[60%] md:w-[90%]">
                 <div class="mx-2 -space-y-2 lg:space-y-0 lg:mx-4 mt-4">
-                    <h1 class="text-2xl lg:text-3xl font-semibold">Bruce Wayne</h1>
-                    <p class="text-lg lg:text-xl text-gray-600">nnm23mc000@nmamit.in</p>
+                    <h1 class="text-2xl lg:text-3xl font-semibold">{{ session('student_name') }}</h1>
+                    <p class="text-lg lg:text-xl text-gray-600">{{ session('email') }}</p>
                 </div>
                 <div class="hidden lg:flex flex-row space-x-2">
                     <a href="{{ route('edit-profile') }}"

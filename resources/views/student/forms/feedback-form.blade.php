@@ -51,11 +51,11 @@
                 <div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">Full Name:</span>
-                        <span class="font-semibold">Bruce Wayne</span>
+                        <span class="font-semibold">{{ session('student_name') }}</span>
                     </div>
                     <div class="flex space-x-5 text-xl">
                         <span class="font-medium">USN:</span>
-                        <span class="font-semibold">NNM23MC000</span>
+                        <span class="font-semibold">{{ session('user_id') }}</span>
                     </div>
                 </div>
             </div>
