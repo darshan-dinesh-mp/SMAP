@@ -15,6 +15,7 @@ class CreateStudentsTable extends Migration
             $table->integer('contact')->nullable();
             $table->integer('semester');
             $table->foreign('student_id')->references('user_id')->on('users');
+            $table->foreign('semester')->references('semester_number')->on('semesters');
             $table->timestamps();
         });
     }
