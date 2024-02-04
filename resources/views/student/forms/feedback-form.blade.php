@@ -122,14 +122,14 @@
                 <div class="flex flex-col text-xl space-y-4 mb-4">
                     <div class="w-2/4 flex flex-col space-y-4 items-center justify-between">
 
-                        @foreach ($subjects as $subject)
+                        {{-- @foreach ($subjects as $subject)
                         <div class="w-full flex items-center justify-between">
                             <span class="text-xl font-medium">{{ $subject->subject_name }} :</span>
                             <input type="number" name="{{ $subject->subject_name }}"
                                 class="border-[3px] text-xl font-semibold w-16 h-16 text-center rounded-xl"
                                 placeholder="00" name="{{ Str::slug($subject->subject_name) }}" id="{{ Str::slug($subject->subject_name) }}">
                         </div>
-                        @endforeach
+                        @endforeach --}}
 
                     </div>
                     <div>

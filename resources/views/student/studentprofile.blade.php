@@ -9,7 +9,7 @@
 
 <body class="font-poppy">
     <div class="relative px-0 lg:px-12">
-        <nav class="w-full flex items-center justify-between px-4 lg:px-0 py-4">
+        <nav class="w-full flex items-center justify-between px-4 lg:px-0 py-4 sticky top-0 z-50 bg-white">
             <div>
                 <a href="{{ route('student_dashboard') }}"
                     class="flex items-center justify-center space-x-2 text-2xl font-medium">
