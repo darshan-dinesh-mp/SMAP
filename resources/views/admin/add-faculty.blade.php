@@ -39,6 +39,12 @@
                                 placeholder="Faculty Name" required>
                         </div>
                         <div>
+                            <p class="font-medium pb-2">Designation:</p>
+                            <input type="text" name="designation"
+                                class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
+                                placeholder="Designation" required>
+                        </div>
+                        <div>
                             <p class="font-medium pb-2">Contact Number:</p>
                             <input type="number" name="contact"
                                 class="bg-secondary w-full px-3 py-3 rounded-md outline-none border-2 focus:border-black/70 border-black/20"
