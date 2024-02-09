@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 use App\Models\FeedbackForm;
 use App\Models\Sem_1_attendance;
 use App\Models\Sem_2_attendance;
+use App\Models\Sem_1_mse;
+use App\Models\Sem_2_mse;
+use App\Models\Sem_3_mse;
+use App\Models\Sem_4_mse;
 
 class StudentController extends Controller
 {
@@ -94,7 +98,6 @@ class StudentController extends Controller
         $sem = Session::get('current_semester');
         $subjects = Subject::where('semester_number', $sem)->get();
         if ($sem == 1) {
-            dd('sem 1');
             $sem_1_attendance = new Sem_1_attendance();
             $sem_1_attendance->form_number = session('pending_feedback_number');
             $sem_1_attendance->student_id = session('user_id');
@@ -138,7 +141,7 @@ class StudentController extends Controller
         return redirect()->back()->with('success', 'Feedback submitted successfully!');
     }
 
-    public function  mse_form()
+    public function mse_form()
     {
         // Retrieve student details from session
         $studentName = Session::get('student_name');
@@ -147,24 +150,36 @@ class StudentController extends Controller
         $subjects = Subject::where('semester_number', $sem)
             ->orderBy('subject_code')
             ->get();
-
-        $formNumber = FeedbackForm::where('student_id', session('user_id'))
-            ->where('semester', session('current_semester'))
-            ->select('form_number')
-            ->get();
-        if ($formNumber->isNotEmpty()) {
-            $maxFormNumber = $formNumber->max('form_number');
-            if ($maxFormNumber == 3) {
-                return redirect()->route('student_dashboard')->with('success', 'No performance feedback form pending');
+        if ($sem == 1) {
+            $mseNumber = Sem_1_mse::where('student_id', session('user_id'))
+                ->select('mse_number')
+                ->get();
+        }
+        if ($sem == 2) {
+            $mseNumber = Sem_2_mse::where('student_id', session('user_id'))
+                ->select('mse_number')
+                ->get();
+        }
+        if ($sem == 3) {
+            $mseNumber = Sem_3_mse::where('student_id', session('user_id'))
+                ->select('mse_number')
+                ->get();
+        }
+        if ($sem == 4) {
+            $mseNumber = Sem_4_mse::where('student_id', session('user_id'))
+                ->select('mse_number')
+                ->get();
+        }
+        if ($mseNumber->isNotEmpty()) {
+            $maxMseNumber = $mseNumber->max('mse_number');
+            if ($maxMseNumber == 2) {
+                return redirect()->route('student_dashboard')->with('success', 'No MSE form pending');
             }
-            if ($maxFormNumber == 2) {
-                session(['pending_feedback_number' => 3]);
-            }
-            if ($maxFormNumber == 1) {
-                session(['pending_feedback_number' => 2]);
+            if ($maxMseNumber == 1) {
+                session(['pending_mse_number' => 2]);
             }
         } else {
-            session(['pending_feedback_number' => 1]);
+            session(['pending_mse_number' => 1]);
         }
 
         if ($subjects->isEmpty()) {
@@ -172,19 +187,59 @@ class StudentController extends Controller
             return redirect()->route('student_dashboard');
         }
         // Pass student name to the view
-        return redirect()->route('student-feedback-form')->with([
+        return redirect()->route('student-first-mse-form')->with([
             'studentName' => $studentName,
             'semester' => $sem,
             'subjects' => $subjects,
         ]);
     }
 
-    public function submit_first_mse_marks(Request $request)
+    public function submit_mse_marks(Request $request)
     {
-        
+        $sem = Session::get('current_semester');
+        $subjects = Subject::where('semester_number', $sem)->get();
+        if ($sem == 1) {
+            $sem_1_mse = new Sem_1_mse();
+            $sem_1_mse->mse_number = session('pending_mse_number');
+            $sem_1_mse->student_id = session('user_id');
+            foreach ($subjects as $subject) {
+                $subjectCode = $subject->subject_code;
+                $sem_1_mse->$subjectCode = $request->input($subjectCode);
+            }
+            $sem_1_mse->save();
+        }
+        if ($sem == 2) {
+            $sem_2_mse = new Sem_2_mse();
+            $sem_2_mse->mse_number = session('pending_mse_number');
+            $sem_2_mse->student_id = session('user_id');
+            foreach ($subjects as $subject) {
+                $subjectCode = $subject->subject_code;
+                $sem_2_mse->$subjectCode = $request->input($subjectCode);
+            }
+            $sem_2_mse->save();
+        }
+        // if ($sem == 3) {
+        //     $sem_3_mse = new sem_3_mse();
+        //     $sem_3_mse->mse_number = session('pending_mse_number');
+        //     $sem_3_mse->student_id = session('user_id');
+        //     foreach ($subjects as $subject) {
+        //         $subjectCode = $subject->subject_code;
+        //         $sem_3_mse->$subjectCode = $request->input($subjectCode);
+        //     }
+        //     $sem_3_mse->save();
+        // }
+        // if ($sem == 4) {
+        //     $sem_4_mse = new sem_4_mse();
+        //     $sem_4_mse->mse_number = session('pending_mse_number');
+        //     $sem_4_mse->student_id = session('user_id');
+        //     foreach ($subjects as $subject) {
+        //         $subjectCode = $subject->subject_code;
+        //         $sem_4_mse->$subjectCode = $request->input($subjectCode);
+        //     }
+        //     $sem_3_mse->save();
+        // }
         // Redirect back with success message or to another page
-        // return redirect()->back()->with('success', 'Feedback submitted successfully!');
-        return redirect()->route('');
+        return redirect()->back()->with('success', 'MSE marks submitted successfully!');
     }
 
 }

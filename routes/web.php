@@ -99,8 +99,7 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/redirecting', [StudentController::class, 'feedback_form'])->name('feedback-form');
-
+Route::get('/redirecting-to-feedback-form', [StudentController::class, 'feedback_form'])->name('feedback-form');
 Route::get('student-feedback-form', function () {
     $studentName = session('studentName');
     $semester = session('current_semester');
@@ -108,41 +107,39 @@ Route::get('student-feedback-form', function () {
     return view('student/forms/feedback-form')->with(compact('subjects', 'studentName', 'semester'));
 })->name('student-feedback-form');
 
-Route::post('/submit-form', [StudentController::class, 'submit_feedback_Form'])->name('submit-form');
+Route::post('/submit-feedback-form', [StudentController::class, 'submit_feedback_Form'])->name('submit-feedback-form');
 
 
 
+Route::get('/redirecting-first-mse-form', [StudentController::class, 'mse_form'])->name('first-mse-form');
 Route::get('student-first-mse-form', function () {
-    return view('student/forms/mse-one-form');
+    $studentName = session('studentName');
+    $semester = session('current_semester');
+    $subjects = session('subjects');
+    return view('student/forms/mse-one-form')->with(compact('subjects', 'studentName', 'semester'));
 })->name('student-first-mse-form');
-Route::get('/redirecting', [StudentController::class, 'mse_form'])->name('first-mse-form');
 
+Route::post('/submit-mse-marks', [StudentController::class, 'submit_mse_marks'])->name('submit-mse-marks');
+
+Route::get('/redirecting-second-mse-form', [StudentController::class, 'mse_form'])->name('second-mse-form');
 Route::get('student-second-mse-form', function () {
-    return view('student/forms/mse-two-form');
+    $studentName = session('studentName');
+    $semester = session('current_semester');
+    $subjects = session('subjects');
+    return view('student/forms/mse-two-form')->with(compact('subjects', 'studentName', 'semester'));;
 })->name('student-second-mse-form');
 
 
 
 
-Route::get('/mse-one-form', function () {
-    if (Session::has('user_id') && Session::get('role') == "student") {
-        return view('student/forms/mse-one-form');
-    } else {
-        return redirect('/');
-    }
-})->name('mse-one-form');
 
-Route::get('/mse-two-form', function () {
-    if (Session::has('user_id') && Session::get('role') == "student") {
-        return view('student/forms/mse-two-form');
-    } else {
-        return redirect('/');
-    }
-})->name('mse-two-form');
-
-
-
-
+// Route::get('/mse-one-form', function () {
+//     if (Session::has('user_id') && Session::get('role') == "student") {
+//         return view('student/forms/mse-one-form');
+//     } else {
+//         return redirect('/');
+//     }
+// })->name('mse-one-form');
 
 
 

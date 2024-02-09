@@ -28,7 +28,7 @@
         </nav>
     </div>
     <div class="flex items-center justify-center flex-col">
-        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-form') }}" method="post">
+        <form class="px-4 lg:px-12 space-y-8 py-8 bg-secondary w-3/4" action="{{ route('submit-feedback-form') }}" method="post">
             @csrf
             <h1 class="text-3xl font-semibold">Performance Feedback {{ session('pending_feedback_number') }}</h1>
             <div>
