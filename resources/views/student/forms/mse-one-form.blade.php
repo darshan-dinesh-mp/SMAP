@@ -34,8 +34,8 @@
             </nav>
         </div>
         <div class="flex items-center justify-center flex-col">
-            <form class="px-0 lg:px-12 space-y-8 py-8 bg-white lg:bg-secondary w-full lg:w-3/4" action="{{ route('submit-form') }}"
-                method="post">
+            <form class="px-0 lg:px-12 space-y-8 py-8 bg-white lg:bg-secondary w-full lg:w-3/4"
+                action="{{ route('submit-form') }}" method="post">
                 @csrf
                 <div class="container mx-auto">
                     <table class="min-w-full bg-white border border-gray-300">
@@ -49,51 +49,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="py-2 px-4 w-1/12 border-b">1</td>
-                                <td class="py-2 px-4 w-1/12 border-b">22MCA301</td>
-                                <td class="py-2 px-4 w-6/12 border-b">Artificial Intelligence and Machine Learning</td>
-                                <td class="py-2 px-4 w-2/12 border-b">
-                                    <input type="text"
-                                        class="border-b-2 w-32 font-semibold text-xl text-center outline-none border-primary py-2 pl-2 mt-2"
-                                        placeholder="in %">
-                                </td>
-                                <td class="py-2 px-4 w-2/12 border-b">
-                                    <input type="text"
-                                        class="border-b-2 w-32 font-semibold text-xl text-center outline-none border-primary py-2 pl-2 mt-2"
-                                        placeholder="00">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-4 w-1/12 border-b">1</td>
-                                <td class="py-2 px-4 w-1/12 border-b">22MCA301</td>
-                                <td class="py-2 px-4 w-6/12 border-b">Artificial Intelligence and Machine Learning</td>
-                                <td class="py-2 px-4 w-2/12 border-b">
-                                    <input type="text"
-                                        class="border-b-2 w-32 font-semibold text-xl text-center outline-none border-primary py-2 pl-2 mt-2"
-                                        placeholder="in %">
-                                </td>
-                                <td class="py-2 px-4 w-2/12 border-b">
-                                    <input type="text"
-                                        class="border-b-2 w-32 font-semibold text-xl text-center outline-none border-primary py-2 pl-2 mt-2"
-                                        placeholder="00">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 px-4 w-1/12 border-b">1</td>
-                                <td class="py-2 px-4 w-1/12 border-b">22MCA301</td>
-                                <td class="py-2 px-4 w-6/12 border-b">Artificial Intelligence and Machine Learning</td>
-                                <td class="py-2 px-4 w-2/12 border-b">
-                                    <input type="text"
-                                        class="border-b-2 w-32 font-semibold text-xl text-center outline-none border-primary py-2 pl-2 mt-2"
-                                        placeholder="in %">
-                                </td>
-                                <td class="py-2 px-4 w-2/12 border-b">
-                                    <input type="text"
-                                        class="border-b-2 w-32 font-semibold text-xl text-center outline-none border-primary py-2 pl-2 mt-2"
-                                        placeholder="00">
-                                </td>
-                            </tr>
                             <tr>
                                 <td class="py-2 px-4 w-1/12 border-b">1</td>
                                 <td class="py-2 px-4 w-1/12 border-b">22MCA301</td>

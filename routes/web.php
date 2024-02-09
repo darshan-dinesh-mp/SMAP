@@ -99,7 +99,7 @@ Route::get('/edit-profile', function () {
 
 
 
-Route::get('/redirecting', [StudentController::class, 'fetch'])->name('feedback-form');
+Route::get('/redirecting', [StudentController::class, 'feedback_form'])->name('feedback-form');
 
 Route::get('student-feedback-form', function () {
     $studentName = session('studentName');
@@ -108,16 +108,18 @@ Route::get('student-feedback-form', function () {
     return view('student/forms/feedback-form')->with(compact('subjects', 'studentName', 'semester'));
 })->name('student-feedback-form');
 
-Route::post('/submit-form', [StudentController::class, 'submitForm'])->name('submit-form');
+Route::post('/submit-form', [StudentController::class, 'submit_feedback_Form'])->name('submit-form');
 
 
 
-Route::get('first-mse-form', function () {
+Route::get('student-first-mse-form', function () {
     return view('student/forms/mse-one-form');
-})->name('first-mse-form');
-Route::get('second-mse-form', function () {
+})->name('student-first-mse-form');
+Route::get('/redirecting', [StudentController::class, 'mse_form'])->name('first-mse-form');
+
+Route::get('student-second-mse-form', function () {
     return view('student/forms/mse-two-form');
-})->name('second-mse-form');
+})->name('student-second-mse-form');
 
 
 
