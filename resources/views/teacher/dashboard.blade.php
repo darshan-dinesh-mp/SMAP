@@ -29,7 +29,7 @@
         </nav>
         <div class="px-12 py-8">
             <div class="grid grid-cols-3 grid-rows-1 space-x-6">
-                <a href="#"
+                <a href="{{ route('add-student') }}"
                     class="cursor-pointer hover:bg-black/10 py-6 text-primary mb-2 bg-black/5 rounded-md flex items-center justify-center space-x-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 20 20">
                         <path fill="currentColor"
@@ -58,9 +58,35 @@
 
             </div>
             <h1 class="text-2xl font-medium mb-6">Latest Updates</h1>
-
+        </div>
+        <div>
+            @if (session('success'))
+            <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                <div class="flex items-center justify-center space-x-2 text-white">
+                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
+                    <h1 class="">
+                        {{ session('success') }}
+                    </h1>
+                </div>
+            </div>
+            @endif
+            @if (session('error'))
+            <div id="message" class="absolute z-40 bg-red-100 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                <div class="flex items-center justify-center space-x-2 text-red-500">
+                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
+                    <h1 class="">
+                        {{ session('error') }}
+                    </h1>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
+    <script>
+        setTimeout(function () {
+            document.getElementById('message').style.display = 'none';
+        }, 5000);
+    </script>
 </body>
 
 </html>

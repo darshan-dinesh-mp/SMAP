@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Models\Teacher;
 
 use Illuminate\Support\Facades\Route;
@@ -145,6 +146,7 @@ Route::get('student-second-mse-form', function () {
 
 Route::post('/add_faculty', [AdminController::class, 'addFaculty'])->name('add_faculty');
 Route::post('/edit_faculty', [AdminController::class, 'editFaculty'])->name('edit_faculty');
+Route::post('/add_student', [TeacherController::class, 'addStudent'])->name('add_student');
 
 Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
 Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
