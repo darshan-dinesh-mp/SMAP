@@ -8,7 +8,7 @@ use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Teacher;
+use Illuminate\Support\Facades\Session;
 
 class FacultyController extends Controller
 {
@@ -29,7 +29,7 @@ class FacultyController extends Controller
             $user->password = bcrypt($request->password);
             $user->role = 'student';
             $user->save();
-            
+
             $student = new Student;
             $student->student_id = $request->usn;
             $student->fullname = $request->fullname;
@@ -37,20 +37,21 @@ class FacultyController extends Controller
             $student->contact = $request->contact;
             $student->email = $request->email;
             $student->save();
-            
-            $mentorship = new Mentorship;
-            $mentorship->mentor_id = session('user_id');
-            $mentorship->mentee_id = $request->usn;
-            $mentorship->save();
-            dd(session('user_id'),' ',$request->usn);
+
+            $mentorship_table = new Mentorship;
+            $mentorship_table->mentor_id = session('user_id');
+            $mentorship_table->mentee_id = $request->usn;
+            $mentorship_table->save();
+            // dd(session('user_id'), $request->usn);
             return redirect()->route('teacher.dashboard')->with('success', 'Student added successfully.');
 
-        } catch (QueryException $exception) {   
+        } catch (QueryException $exception) {
             $errorCode = $exception->errorInfo[1];
             if ($errorCode == 1062) {
                 return redirect()->route('teacher.dashboard')->with('error', 'Student USN already exists.');
             }
-            return redirect()->route('teacher.dashboard')->with('error', 'Database error occurred.');
+            // return redirect()->route('teacher.dashboard')->with('error', 'Database error occurred.');
+            dd($errorCode);
         } catch (Exception $exception) {
             return redirect()->route('teacher.dashboard')->with('error', $exception->getMessage());
         }
