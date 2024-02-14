@@ -57,7 +57,28 @@
                 </a>
 
             </div>
-            <h1 class="text-2xl font-medium mb-6">Latest Updates</h1>
+            <h1 class="text-2xl font-medium mb-6">All Mentees</h1>
+        </div>
+        <div class="">
+            <div class="grid grid-cols-4 gap-x-0 gap-y-0 border-b-2 border-black/20 bg-secondary p-4">
+                <h1 class="text-lg font-medium">Student USN</h1>
+                <h1 class="text-lg font-medium">Student Name</h1>
+                <h1 class="text-lg font-medium">Contact</h1>
+                <h1 class="text-lg font-medium">Semester</h1>
+            </div>
+            @foreach ($students as $student)
+            <div class="grid grid-cols-4 gap-x-0 gap-y-0 py-4 px-3 border-b-2 border-black/10">
+                <h1 class="text-lg">{{ $student->student_id }}</h1>
+                <h1 class="text-lg">{{ $student->fullname }}</h1>
+                <h1 class="text-lg">{{ $student->contact }}</h1>
+                <h1 class="text-lg">{{ $student->semester }}</h1>
+                <!-- <a href="route('edit-student', ['student_id' => $student->student_id])">
+                    <div>
+                        {{-- <x-feathericon-edit class="w-5 h-5" /> --}}
+                    </div>
+                </a> -->
+            </div>
+            @endforeach
         </div>
         <div>
             @if (session('success'))
