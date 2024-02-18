@@ -37,7 +37,7 @@ Route::get('/profile', function () {
 
 Route::get('/dashboard', function () {
     if (Session::has('user_id') && Session::get('role') == "teacher") {
-        return view('teacher/dashboard');
+        return redirect()->route('teacher.dashboard');
     } else {
         return redirect('/');
     }
@@ -163,3 +163,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/teacher/dashboard', [DashboardController::class, 'teacher'])->name('teacher.dashboard');
     Route::get('/admin/dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
 });
+
+
+Route::get('/teacher/dashboard/students', [FacultyController::class,'search'])->name('view-by-semester');

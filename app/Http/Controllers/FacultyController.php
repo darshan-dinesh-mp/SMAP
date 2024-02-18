@@ -56,4 +56,17 @@ class FacultyController extends Controller
             return redirect()->route('teacher.dashboard')->with('error', $exception->getMessage());
         }
     }
+
+    public function search(Request $request)
+    {
+        $semester = $request->query('semester');
+        if($semester=='all'){
+            $students = Student::all();
+            return redirect()->route('teacher.dashboard');
+        }
+        else{
+            $students = Student::where('semester', $semester)->get();
+            return view('teacher.dashboard',compact('students'));
+        }
+    }
 }

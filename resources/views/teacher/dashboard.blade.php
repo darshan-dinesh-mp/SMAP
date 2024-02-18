@@ -58,12 +58,17 @@
 
             </div>
             <h1 class="text-2xl font-medium mb-6">All Mentees</h1>
-            <form action="">
-                <select name="semester">
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
+            @php
+            $selectedSemester = 'all';
+            @endphp
+            <form id="semesterForm" action="{{ route('view-by-semester', ['semester' => $selectedSemester]) }}"
+                method="get">
+                <select id="semesterSelect" name="semester">
+                    <option value="all" {{ $selectedSemester=='all' ? 'selected' : '' }}>All Students</option>
+                    <option value="1" {{ $selectedSemester==1 ? 'selected' : '' }}>Semester 1</option>
+                    <option value="2" {{ $selectedSemester==2 ? 'selected' : '' }}>Semester 2</option>
+                    <option value="3" {{ $selectedSemester==3 ? 'selected' : '' }}>Semester 3</option>
+                    <option value="4" {{ $selectedSemester==4 ? 'selected' : '' }}>Semester 4</option>
                 </select>
             </form>
         </div>
@@ -115,6 +120,17 @@
         setTimeout(function () {
             document.getElementById('message').style.display = 'none';
         }, 5000);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const semesterParam = urlParams.get('semester');
+
+        if (semesterParam) {
+            document.getElementById('semesterSelect').value = semesterParam;
+        }
+
+        document.getElementById('semesterSelect').addEventListener('change', function () {
+            document.getElementById('semesterForm').submit();
+        });
     </script>
 </body>
 
