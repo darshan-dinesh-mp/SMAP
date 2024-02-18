@@ -58,6 +58,14 @@
 
             </div>
             <h1 class="text-2xl font-medium mb-6">All Mentees</h1>
+            <form action="">
+                <select name="semester">
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                </select>
+            </form>
         </div>
         <div class="">
             <div class="grid grid-cols-4 gap-x-0 gap-y-0 border-b-2 border-black/20 bg-secondary p-4">
