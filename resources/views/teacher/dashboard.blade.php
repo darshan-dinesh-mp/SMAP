@@ -61,16 +61,19 @@
             @php
             $selectedSemester = 'all';
             @endphp
-            <form id="semesterForm" action="{{ route('view-by-semester', ['semester' => $selectedSemester]) }}"
-                method="get">
-                <select id="semesterSelect" name="semester">
-                    <option value="all" {{ $selectedSemester=='all' ? 'selected' : '' }}>All Students</option>
-                    <option value="1" {{ $selectedSemester==1 ? 'selected' : '' }}>Semester 1</option>
-                    <option value="2" {{ $selectedSemester==2 ? 'selected' : '' }}>Semester 2</option>
-                    <option value="3" {{ $selectedSemester==3 ? 'selected' : '' }}>Semester 3</option>
-                    <option value="4" {{ $selectedSemester==4 ? 'selected' : '' }}>Semester 4</option>
-                </select>
-            </form>
+            <div class="flex items-center gap-6">
+                <form id="semesterForm" action="{{ route('view-by-semester', ['semester' => $selectedSemester]) }}"
+                    method="get">
+                    <select id="semesterSelect" name="semester">
+                        <option value="all" {{ $selectedSemester=='all' ? 'selected' : '' }}>All Students</option>
+                        <option value="1" {{ $selectedSemester==1 ? 'selected' : '' }}>Semester 1</option>
+                        <option value="2" {{ $selectedSemester==2 ? 'selected' : '' }}>Semester 2</option>
+                        <option value="3" {{ $selectedSemester==3 ? 'selected' : '' }}>Semester 3</option>
+                        <option value="4" {{ $selectedSemester==4 ? 'selected' : '' }}>Semester 4</option>
+                    </select>
+                </form>
+                <form action=""><input class="text-black border-2 rounded-md border-black p-4" type="search" name="" id="" placeholder="Search Student"></form>
+            </div>
         </div>
         <div class="">
             <div class="grid grid-cols-4 gap-x-0 gap-y-0 border-b-2 border-black/20 bg-secondary p-4">
