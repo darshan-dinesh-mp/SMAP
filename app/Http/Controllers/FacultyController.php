@@ -60,13 +60,22 @@ class FacultyController extends Controller
     public function search(Request $request)
     {
         $semester = $request->query('semester');
-        if($semester=='all'){
+        $usn = $request->query('usn');
+
+        if (isset($semester)) {
+            if ($semester == 'all') {
+                $students = Student::all();
+                return redirect()->route('teacher.dashboard');
+            } else {
+                $students = Student::where('semester', $semester)->get();
+                return view('teacher.dashboard', compact('students'));
+            }
+        } elseif (isset($usn)) {
+            $students = Student::where('student_id', $usn)->get();
+            return view('teacher.dashboard', compact('students'));
+        } else {
             $students = Student::all();
             return redirect()->route('teacher.dashboard');
-        }
-        else{
-            $students = Student::where('semester', $semester)->get();
-            return view('teacher.dashboard',compact('students'));
         }
     }
 }

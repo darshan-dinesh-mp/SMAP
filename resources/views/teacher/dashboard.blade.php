@@ -72,7 +72,12 @@
                         <option value="4" {{ $selectedSemester==4 ? 'selected' : '' }}>Semester 4</option>
                     </select>
                 </form>
-                <form action=""><input class="text-black border-2 rounded-md border-black p-4" type="search" name="" id="" placeholder="Search Student"></form>
+                <form method="get" action="{{ route('view-by-semester') }}">
+                    <input class="text-black border-2 rounded-md border-black p-2" type="search" name="usn" id=""
+                        placeholder="Search Student by USN">
+                    <input class="text-black border-2 rounded-md bg-slate-300 border-black p-2" type="submit"
+                        value="Search">
+                </form>
             </div>
         </div>
         <div class="">

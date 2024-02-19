@@ -166,3 +166,4 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::get('/teacher/dashboard/students', [FacultyController::class,'search'])->name('view-by-semester');
+// Route::get('/teacher/dashboard/students', [FacultyController::class,'search'])->name('search-by-usn');
