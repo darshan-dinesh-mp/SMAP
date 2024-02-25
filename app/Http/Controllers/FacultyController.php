@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mentorship;
 use App\Models\Student;
+use App\Models\Teacher;
 use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -60,22 +61,33 @@ class FacultyController extends Controller
     public function search(Request $request)
     {
         $semester = $request->query('semester');
-        $usn = $request->query('usn');
+        $id = $request->query('id');
+        $role = $request->query('role');
 
-        if (isset($semester)) {
-            if ($semester == 'all') {
+        if ($role == 'student') {
+            if (isset($semester)) {
+                if ($semester == 'all') {
+                    $students = Student::all();
+                    return redirect()->route('teacher.dashboard');
+                } else {
+                    $students = Student::where('semester', $semester)->get();
+                    return view('teacher.dashboard', compact('students'));
+                }
+            } elseif (isset($id)) {
+                $students = Student::where('student_id', $id)->get();
+                return view('teacher.dashboard', compact('students'));
+            } else {
                 $students = Student::all();
                 return redirect()->route('teacher.dashboard');
-            } else {
-                $students = Student::where('semester', $semester)->get();
-                return view('teacher.dashboard', compact('students'));
             }
-        } elseif (isset($usn)) {
-            $students = Student::where('student_id', $usn)->get();
-            return view('teacher.dashboard', compact('students'));
-        } else {
-            $students = Student::all();
-            return redirect()->route('teacher.dashboard');
+        }
+        if ($role == 'teacher') {
+            if (isset($id)) {
+                $teachers = Teacher::where('emp_id', $id)->get();
+                return view('teacher/view-faculties', compact('teachers'));
+            } else {
+                return redirect()->route('view-faculties');
+            }
         }
     }
 }

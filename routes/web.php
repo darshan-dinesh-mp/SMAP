@@ -36,7 +36,7 @@ Route::get('/profile', function () {
 })->name('teacher-profile');
 
 Route::get('/dashboard', function () {
-    if (Session::has('user_id') && Session::get('role') == "teacher") {
+    if (Session::has('user_id') && (Session::get('role') == "teacher" || Session::get('role') == "hod")) {
         return redirect()->route('teacher.dashboard');
     } else {
         return redirect('/');
@@ -132,24 +132,17 @@ Route::get('student-second-mse-form', function () {
 
 
 
-
-
-// Route::get('/mse-one-form', function () {
-//     if (Session::has('user_id') && Session::get('role') == "student") {
-//         return view('student/forms/mse-one-form');
-//     } else {
-//         return redirect('/');
-//     }
-// })->name('mse-one-form');
-
-
-
 Route::post('/add_faculty', [AdminController::class, 'addFaculty'])->name('add_faculty');
 Route::post('/edit_faculty', [AdminController::class, 'editFaculty'])->name('edit_faculty');
 Route::post('/add_student', [FacultyController::class, 'addStudent'])->name('add_student');
 
 Route::post('/student_staff_login', [LoginController::class, 'student_staff_login'])->name('student_staff_login');
 Route::post('/admin_login', [LoginController::class, 'admin_login'])->name('admin_login');
+
+Route::get('/teacher/dashboard/faculties', function () {
+    $teachers = Teacher::whereNotIn('emp_id', [session('user_id')])->get();
+    return view('teacher/view-faculties', compact('teachers'));
+})->name('view-faculties');
 
 
 Route::get('/error', function () {
@@ -165,5 +158,5 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/teacher/dashboard/students', [FacultyController::class,'search'])->name('view-by-semester');
+Route::get('/teacher/dashboard/search', [FacultyController::class,'search'])->name('view-by-semester');
 // Route::get('/teacher/dashboard/students', [FacultyController::class,'search'])->name('search-by-usn');
