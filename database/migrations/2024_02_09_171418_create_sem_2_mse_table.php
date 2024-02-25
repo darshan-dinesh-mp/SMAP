@@ -25,10 +25,10 @@ return new class extends Migration
             $table->string('22MCA207');
             $table->string('22MCA208');
             $table->string('22MCA209');
-            $table->string('22MCA211');
-            $table->string('22MCA213');
-            $table->string('22MCA222');
-            $table->string('22MCA225');
+            $table->string('22MCA211')->nullable()->default(null);
+            $table->string('22MCA213')->nullable()->default(null);
+            $table->string('22MCA222')->nullable()->default(null);
+            $table->string('22MCA225')->nullable()->default(null);
             $table->primary(['mse_number', 'student_id']);
             $table->timestamps();
         });

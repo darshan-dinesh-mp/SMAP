@@ -24,12 +24,12 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('students.*')
                     ->first();
-                $mentor_details=Teacher::join('mentorship', 'teachers.emp_id', '=', 'mentorship.mentor_id')
-                ->where('mentorship.mentee_id', $user->user_id)
-                ->select('teachers.*')
-                ->first();
+                $mentor_details = Teacher::join('mentorship', 'teachers.emp_id', '=', 'mentorship.mentor_id')
+                    ->where('mentorship.mentee_id', $user->user_id)
+                    ->select('teachers.*')
+                    ->first();
 
-                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester, 'mentor_name'=>$mentor_details->fullname,  'designation'=>$mentor_details->designation]);
+                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester, 'mentor_name' => $mentor_details->fullname, 'designation' => $mentor_details->designation]);
                 // session(['pending_feedback_number' => 0]);
                 $formNumber = FeedbackForm::where('student_id', session('user_id'))
                     ->where('semester', session('current_semester'))
@@ -59,6 +59,15 @@ class LoginController extends Controller
                     ->select('teachers.*')
                     ->first();
                 session(['user_id' => $teacher->emp_id, 'role' => $user->role, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'email' => $credentials['email']]);
+                // Redirect teachers to the teacher dashboard
+                return redirect()->route('teacher.dashboard');
+            } elseif ($user->isHOD()) {
+                // Retrieve teacher details
+                $teacher = Teacher::join('users', 'teachers.emp_id', '=', 'users.user_id')
+                    ->where('users.email', $credentials['email'])
+                    ->select('teachers.*')
+                    ->first();
+                session(['user_id' => $teacher->emp_id, 'role' => 'teacher', 'isHOD' => true, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'email' => $credentials['email']]);
                 // Redirect teachers to the teacher dashboard
                 return redirect()->route('teacher.dashboard');
             } else {

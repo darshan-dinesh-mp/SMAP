@@ -17,26 +17,25 @@ class UserSeeder extends Seeder
     {
         //Data that must present in the table are given here. and this seeder is run to insert these data into the table. 
 
-        //admin
+        //Admin/HOD
         DB::table("users")->insert([
             "user_id" => "admin23mca",
             "email" => "admin@example.com",
             "password" => bcrypt("password"),
             "role" => "admin",
         ]);
-
         DB::table("users")->insert([
-            "user_id" => "teacher23mca",
-            "email" => "teacher@example.com",
-            "password" => bcrypt("password"),
-            "role" => "teacher",
+            "user_id" => "hod23mca",
+            "email" => "hod@example.com",
+            "password" => bcrypt("hod"),
+            "role" => "hod",
         ]);
-
-        DB::table("users")->insert([
-            "user_id" => "student23mca",
-            "email" => "student@example.com",
-            "password" => bcrypt("password"),
-            "role" => "student",
+        DB::table("teachers")->insert([
+            "emp_id" => "hod23mca",
+            "fullname" => "Mamatha Balipa",
+            "designation" => "Professor",
+            "email" => "hod@example.com",
+            "contact" => "9087654326",
         ]);
     }
 }
