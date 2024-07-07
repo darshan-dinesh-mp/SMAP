@@ -13,6 +13,7 @@
             <div class="-space-y-3">
                 <h1 class="text-2xl font-semibold">Dashboard</h1>
             </div>
+            
             <a href="{{ route('student-profile') }}">
                 <div
                     class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
@@ -43,8 +44,8 @@
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
                 </a> -->
                 <a href="{{ route('feedback-form') }}"
-                    class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-
+                    class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300"
+                    style="{{ session('feedback_filled')=="true"?'pointer-events:none; opacity:0.6':'' }}">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300"
                         viewBox="0 0 512 512">
@@ -54,7 +55,8 @@
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Performance Feedback form</h1>
                 </a>
                 <a href="{{ route('first-mse-form') }}"
-                    class="flex items-center justify-start group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
+                    class="flex items-center justify-start group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300"
+                    style="{{ session('mse_filled')=="true"?'pointer-events:none; opacity:0.6':'' }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 448 512">
                         <path fill="currentColor"
                             d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
@@ -77,8 +79,8 @@
                 </div> -->
             </div>
         </div>
-        <div class="px-4 lg:px-12 py-8">
-            <a href="{{ route('third-sem-subjects') }}" class="text-2xl font-medium">Subject Updates</a>
+        <!-- <div class="px-4 lg:px-12 py-8">
+            <a href="" class="text-2xl font-medium">Subject Updates</a>
             <div class="grid grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-6 w-full pt-4">
                 <div
                     class="flex items-center justify-between border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-4 rounded-lg duration-300">
@@ -129,41 +131,41 @@
                     </svg>
                 </div>
             </div>
-        </div>
+        </div> -->
         {{-- <div class="px-4 lg:px-12 py-8">
             <h1 class="text-2xl font-medium mb-6">Subject Updates</h1>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-6 w-full">
-                <a href="{{ route('third-sem-subjects') }}"
+                <a href=""
                     class="flex items-center justify-start border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-feathericon-book
                         class="w-7 h-7 group-hover:scale-[1.1] group-hover:text-blue-500 duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Data Structure & Algorithm</h1>
                 </a>
-                <a href="{{ route('third-sem-subjects') }}"
+                <a href=""
                     class="flex items-center justify-start border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-feathericon-book
                         class="w-7 h-7 group-hover:scale-[1.1] group-hover:text-blue-500 duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Advanced DB Management System</h1>
                 </a>
-                <a href="{{ route('third-sem-subjects') }}"
+                <a href=""
                     class="flex items-center justify-start border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-feathericon-book
                         class="w-7 h-7 group-hover:scale-[1.1] group-hover:text-blue-500 duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Software Engineering & Technology</h1>
                 </a>
-                <a href="{{ route('third-sem-subjects') }}"
+                <a href=""
                     class="flex items-center justify-start border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-feathericon-book
                         class="w-7 h-7 group-hover:scale-[1.1] group-hover:text-blue-500 duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Mathamatical Fundamentals</h1>
                 </a>
-                <a href="{{ route('third-sem-subjects') }}"
+                <a href=""
                     class="flex items-center justify-start border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-feathericon-book
                         class="w-7 h-7 group-hover:scale-[1.1] group-hover:text-blue-500 duration-300" />
                     <h1 class="font-medium text-xl group-hover:text-dark/80">Computer Oriented Architecture</h1>
                 </a>
-                <a href="{{ route('third-sem-subjects') }}"
+                <a href=""
                     class="flex items-center justify-start border-[3px] border-secondary hover:border-[#e5e7eb] cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
                     <x-feathericon-book
                         class="w-7 h-7 group-hover:scale-[1.1] group-hover:text-blue-500 duration-300" />
@@ -174,19 +176,19 @@
         <div>
 
             @if (session('success'))
-            <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
-                <div class="flex items-center justify-center space-x-2 text-white">
-                    {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
-                    <h1 class="">
-                        {{ session('success') }}
-                    </h1>
+                <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                    <div class="flex items-center justify-center space-x-2 text-white">
+                        {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
+                        <h1 class="">
+                            {{ session('success') }}
+                        </h1>
+                    </div>
                 </div>
-            </div>
             @endif
         </div>
     </div>
     <script>
-        setTimeout(function () {
+        setTimeout(function() {
             document.getElementById('message').style.display = 'none';
         }, 5000);
     </script>

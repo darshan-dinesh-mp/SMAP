@@ -35,8 +35,8 @@
             </div>
             <div class="flex items-end justify-between w-[60%] md:w-[90%]">
                 <div class="mx-2 -space-y-2 lg:space-y-0 lg:mx-4 mt-4">
-                    <h1 class="text-2xl lg:text-3xl font-semibold">{{ session('student_name') }}</h1>
-                    <p class="text-lg lg:text-xl text-gray-600">{{ session('email') }}</p>
+                    <h1 class="text-2xl lg:text-3xl font-semibold">{{ $data->fullname }}</h1>
+                    <p class="text-lg lg:text-xl text-gray-600">{{ $data->student_id }}</p>
                 </div>
                 <div class="hidden lg:flex flex-row space-x-2">
                     <a href="{{ route('edit-profile') }}"
@@ -64,58 +64,27 @@
         <div class="space-y-3 mt-4 lg:mt-8 px-4 lg:px-0 pb-8">
             <div class="space-y-1">
                 <h1 class="font-semibold tracking-widest text-black/70">ABOUT ME</h1>
-                <p class="text-lg">Passionate MCA student, coding enthusiast. Thrives
-                    on crafting elegant solutions. Constant learner
-                    embracing tech's limitless possibilities. 😋</p>
+                <p class="text-lg">{{ $data->about }}</p>
             </div>
             <div class="space-y-4">
                 <h1 class="font-semibold tracking-widest text-black/70">INTERESTS & SKILLS</h1>
                 <div class="flex flex-wrap gap-2">
-                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Programming</span>
-                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Dancing</span>
-                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Reading</span>
-                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Traveling</span>
-                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Photography</span>
-                    <span class="text-md bg-black/10 py-2 px-4 rounded-lg text-center">Gaming</span>
+                    @foreach (explode(', ', $data->skills) as $skill)
+                        <span class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
+                        <span>{{ $skill }}</span>
+                        </span>
+                    @endforeach
                 </div>
             </div>
 
             <div class="space-y-4">
-                <h1 class="font-semibold tracking-widest text-black/70">PROJECTS</h1>
-                <ul class="list-inside list-disc">
-                    <li>Fitness App using Flutter</li>
-                    <li>Fitness App using Flutter</li>
-                </ul>
-            </div>
-            <div class="space-y-4">
-                <h1 class="font-semibold tracking-widest text-black/70">OBJECTIVES</h1>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
-                    <a {{-- href="{{ route('general-form') }}" --}}
-                        class="flex items-center justify-start cursor-pointer group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="w-7 h-7 group-hover:rotate-[30deg] group-hover:text-[#ffd000] duration-300"
-                            viewBox="0 0 512 512">
-                            <path fill="currentColor"
-                                d="M464 256a208 208 0 1 1-416 0a208 208 0 1 1 416 0M0 256a256 256 0 1 0 512 0a256 256 0 1 0-512 0m232-136v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24" />
-                        </svg>
-                        <h1 class="font-medium text-xl group-hover:text-dark/80">Complete your profile!</h1>
-                    </a>
-                    <div
-                        class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-black/30" viewBox="0 0 448 512">
-                            <path fill="currentColor"
-                                d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
-                        </svg>
-                        <h1 class="font-medium text-xl text-dark/30">Update first MSE Marks</h1>
-                    </div>
-                    <div
-                        class="flex items-center justify-start cursor-not-allowed group bg-secondary space-x-4 px-6 py-7 rounded-lg duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-black/30" viewBox="0 0 448 512">
-                            <path fill="currentColor"
-                                d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z" />
-                        </svg>
-                        <h1 class="font-medium text-xl text-dark/30">Update second MSE Marks</h1>
-                    </div>
+                <h1 class="font-semibold tracking-widest text-black/70">PROJECTS{{ session('pending_feedback_number') }}</h1>
+                <div class="flex flex-wrap gap-2">
+                    @foreach (explode(', ', $data->projects) as $project)
+                        <span class="text-md flex items-center justify-center space-x-3 bg-black/10 py-2 px-4 rounded-lg text-center">
+                        <span>{{ $project }}</span>
+                        </span>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -147,8 +116,21 @@
                 </svg>
                 {{-- <span class="font-medium">Close</span> --}}
             </div>
+            
         </div>
 
+        <div>
+            @if (session('success'))
+                <div id="message" class="absolute z-40 bg-green-500 rounded-xl pr-24 pl-5 py-3 bottom-0 right-0">
+                    <div class="flex items-center justify-center space-x-2 text-white">
+                        {{-- <x-heroicon-o-user class="w-5 h-5" /> --}}
+                        <h1 class="">
+                            {{ session('success') }}
+                        </h1>
+                    </div>
+                </div>
+            @endif
+        </div>
         <script>
             const sidebar = document.getElementById('sidebar');
             const closeSidebar = document.getElementById('closeSidebar');
@@ -161,6 +143,10 @@
             closeSidebar.addEventListener('click', function() {
                 sidebar.classList.add('-translate-x-full');
             });
+
+            setTimeout(function() {
+                document.getElementById('message').style.display = 'none';
+            }, 5000);
         </script>
 </body>
 

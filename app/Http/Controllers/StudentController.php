@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\Subject;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\FeedbackForm;
@@ -15,12 +17,40 @@ use App\Models\Sem_4_mse;
 
 class StudentController extends Controller
 {
+
+    public function edit_profile(Request $request)
+    {
+        if (!Session::has('user_id') || Session::get('role') != "student")
+            return redirect('/');
+
+        $request->validate([
+            'about' => 'required',
+            'skills' => 'required',
+            'projects' => 'required',
+        ]);
+
+        try {
+            $student = Student::where('student_id', session("user_id"))->first();
+            $student->about = $request->about;
+            $student->skills = $request->skills;
+            $student->projects = $request->projects;
+            $student->save();
+
+            return redirect()->route('student-profile')->with('success', 'Profile Updated');
+        } catch (QueryException $exception) {
+            return redirect()->route('student.dashboard')->with('message', 'An error occurred while updating profile.');
+        }
+
+    }
+
     public function feedback_form()
     {
+        if (!Session::has('user_id') || Session::get('role') != "student")
+            return redirect('/');
+
         // Retrieve student details from session
         $studentName = Session::get('student_name');
         $sem = Session::get('current_semester');
-        // $pending_feedback_number = Session::get('pending_feedback_number');
         $subjects = Subject::where('semester_number', $sem)
             ->orderBy('subject_code')
             ->get();
@@ -29,6 +59,7 @@ class StudentController extends Controller
             ->where('semester', session('current_semester'))
             ->select('form_number')
             ->get();
+
         if ($formNumber->isNotEmpty()) {
             $maxFormNumber = $formNumber->max('form_number');
             if ($maxFormNumber == 3) {
@@ -45,7 +76,6 @@ class StudentController extends Controller
         }
 
         if ($subjects->isEmpty()) {
-            dd($sem);
             return redirect()->route('student_dashboard');
         }
         // Pass student name to the view
@@ -58,6 +88,9 @@ class StudentController extends Controller
 
     public function submit_feedback_Form(Request $request)
     {
+        if (!Session::has('user_id') || Session::get('role') != "student")
+            return redirect('/');
+
         // Validate the form data
         $validatedData = $request->validate([
             'field1' => 'required',
@@ -95,6 +128,11 @@ class StudentController extends Controller
         $feedbackForm->field13 = $request->input('field13');
         $feedbackForm->save();
 
+        $student = Student::where('student_id', session("user_id"))->first();
+        $student->feedback_filled = "true";
+        session(['feedback_filled' => $student->feedback_filled]);
+        $student->save();
+
         $sem = Session::get('current_semester');
         $subjects = Subject::where('semester_number', $sem)->get();
         if ($sem == 1) {
@@ -103,7 +141,7 @@ class StudentController extends Controller
             $sem_1_attendance->student_id = session('user_id');
             foreach ($subjects as $subject) {
                 $subjectCode = $subject->subject_code;
-                $sem_1_attendance->$subjectCode = $request->input($subjectCode);
+                $sem_1_attendance->$subjectCode = $request->input($subjectCode) != null ? $request->input($subjectCode) : "null";
             }
             $sem_1_attendance->save();
         }
@@ -113,7 +151,7 @@ class StudentController extends Controller
             $sem_2_attendance->student_id = session('user_id');
             foreach ($subjects as $subject) {
                 $subjectCode = $subject->subject_code;
-                $sem_2_attendance->$subjectCode = $request->input($subjectCode);
+                $sem_2_attendance->$subjectCode = $request->input($subjectCode) != null ? $request->input($subjectCode) : "null";
             }
             $sem_2_attendance->save();
         }
@@ -123,7 +161,7 @@ class StudentController extends Controller
         //     $sem_3_attendance->student_id = session('user_id');
         //     foreach ($subjects as $subject) {
         //         $subjectCode = $subject->subject_code;
-        //         $sem_3_attendance->$subjectCode = $request->input($subjectCode);
+        //         $sem_3_attendance->$subjectCode = $request->input($subjectCode)!=null?$request->input($subjectCode):"null";
         //     }
         //     $sem_3_attendance->save();
         // }
@@ -133,7 +171,7 @@ class StudentController extends Controller
         //     $sem_4_attendance->student_id = session('user_id');
         //     foreach ($subjects as $subject) {
         //         $subjectCode = $subject->subject_code;
-        //         $sem_4_attendance->$subjectCode = $request->input($subjectCode);
+        //         $sem_4_attendance->$subjectCode = $request->input($subjectCode)!=null?$request->input($subjectCode):"null";
         //     }
         //     $sem_4_attendance->save();
         // }
@@ -143,6 +181,9 @@ class StudentController extends Controller
 
     public function mse_form()
     {
+        if (!Session::has('user_id') || Session::get('role') != "student")
+            return redirect('/');
+
         // Retrieve student details from session
         $studentName = Session::get('student_name');
         $sem = Session::get('current_semester');
@@ -183,7 +224,6 @@ class StudentController extends Controller
         }
 
         if ($subjects->isEmpty()) {
-            dd($sem);
             return redirect()->route('student_dashboard');
         }
         // Pass student name to the view
@@ -196,6 +236,9 @@ class StudentController extends Controller
 
     public function submit_mse_marks(Request $request)
     {
+        if (!Session::has('user_id') || Session::get('role') != "student")
+            return redirect('/');
+
         $sem = Session::get('current_semester');
         $subjects = Subject::where('semester_number', $sem)->get();
         if ($sem == 1) {
@@ -204,7 +247,7 @@ class StudentController extends Controller
             $sem_1_mse->student_id = session('user_id');
             foreach ($subjects as $subject) {
                 $subjectCode = $subject->subject_code;
-                $sem_1_mse->$subjectCode = $request->input($subjectCode);
+                $sem_1_mse->$subjectCode = $request->input($subjectCode) != null ? $request->input($subjectCode) : "null";
             }
             $sem_1_mse->save();
         }
@@ -214,7 +257,7 @@ class StudentController extends Controller
             $sem_2_mse->student_id = session('user_id');
             foreach ($subjects as $subject) {
                 $subjectCode = $subject->subject_code;
-                $sem_2_mse->$subjectCode = $request->input($subjectCode);
+                $sem_2_mse->$subjectCode = $request->input($subjectCode) != null ? $request->input($subjectCode) : "null";
             }
             $sem_2_mse->save();
         }
@@ -224,7 +267,7 @@ class StudentController extends Controller
         //     $sem_3_mse->student_id = session('user_id');
         //     foreach ($subjects as $subject) {
         //         $subjectCode = $subject->subject_code;
-        //         $sem_3_mse->$subjectCode = $request->input($subjectCode);
+        //         $sem_3_mse->$subjectCode = $request->input($subjectCode)!=null?$request->input($subjectCode):"null";
         //     }
         //     $sem_3_mse->save();
         // }
@@ -234,11 +277,17 @@ class StudentController extends Controller
         //     $sem_4_mse->student_id = session('user_id');
         //     foreach ($subjects as $subject) {
         //         $subjectCode = $subject->subject_code;
-        //         $sem_4_mse->$subjectCode = $request->input($subjectCode);
+        //         $sem_4_mse->$subjectCode = $request->input($subjectCode)!=null?$request->input($subjectCode):"null";
         //     }
         //     $sem_3_mse->save();
         // }
         // Redirect back with success message or to another page
+
+        $student = Student::where('student_id', session("user_id"))->first();
+        $student->mse_filled = "true";
+        session(['mse_filled' => $student->mse_filled]);
+        $student->save();
+
         return redirect()->back()->with('success', 'MSE marks submitted successfully!');
     }
 

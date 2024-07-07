@@ -10,11 +10,15 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class FacultyController extends Controller
 {
     public function addStudent(Request $request)
     {
+        if (!Session::has('user_id') || Session::get('role') == "student")
+            return redirect('/');
+
         $request->validate([
             'usn' => 'required',
             'fullname' => 'required',
@@ -51,15 +55,42 @@ class FacultyController extends Controller
             if ($errorCode == 1062) {
                 return redirect()->route('teacher.dashboard')->with('error', 'Student USN already exists.');
             }
-            // return redirect()->route('teacher.dashboard')->with('error', 'Database error occurred.');
             dd($errorCode);
         } catch (Exception $exception) {
             return redirect()->route('teacher.dashboard')->with('error', $exception->getMessage());
         }
     }
 
+    public function deleteStudent(Request $request)
+    {
+        if (!Session::has('user_id') || Session::get('role') == "student")
+            return redirect('/');
+
+        $request->validate([
+            'student_id' => 'required',
+        ]);
+
+        try {
+            $student = Student::where('student_id', $request->student_id)->first();
+            $student->delete();
+
+            DB::select("DELETE FROM mentorshiP WHERE mentee_id = ? AND mentor_id = ?", [$request->student_id, session('user_id')]);
+
+            $user = User::where('user_id', $request->student_id)->first();
+            $user->delete();
+
+            return redirect()->route('teacher.dashboard')->with('success', 'Student removed successfully.');
+        } catch (QueryException $exception) {
+            return redirect()->route('teacher.dashboard')->with('message', 'An error occurred while deleting student.');
+        }
+
+    }
+
     public function search(Request $request)
     {
+        if (!Session::has('user_id') || Session::get('role') == "student")
+            return redirect('/');
+
         $semester = $request->query('semester');
         $id = $request->query('id');
         $role = $request->query('role');
@@ -67,10 +98,10 @@ class FacultyController extends Controller
         if ($role == 'student') {
             if (isset($semester)) {
                 if ($semester == 'all') {
-                    $students = Student::all();
+                    $students = $students = DB::select("SELECT * FROM students WHERE student_id in (SELECT mentee_id from mentorship WHERE mentor_id = ?)", [session("user_id")]);
                     return redirect()->route('teacher.dashboard');
                 } else {
-                    $students = Student::where('semester', $semester)->get();
+                    $students = DB::select("SELECT * FROM students WHERE student_id in (SELECT mentee_id from mentorship WHERE mentor_id = ?) AND semester = ?", [session("user_id"), $semester]);
                     return view('teacher.dashboard', compact('students'));
                 }
             } elseif (isset($id)) {
@@ -89,5 +120,15 @@ class FacultyController extends Controller
                 return redirect()->route('view-faculties');
             }
         }
+        if ($role == 'admin') {
+            if (isset($id)) {
+                // $teachers = Teacher::where('emp_id', $id)->get();
+                $teachers = DB::select('SELECT * FROM teachers WHERE emp_id=?', [$id]);
+                return view('admin.dashboard', compact('teachers'));
+            } else {
+                return redirect()->route('admin.dashboard');
+            }
+        }
+
     }
 }

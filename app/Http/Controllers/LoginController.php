@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use BladeUIKit\Components\Buttons\Logout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Student;
@@ -29,8 +28,7 @@ class LoginController extends Controller
                     ->select('teachers.*')
                     ->first();
 
-                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester, 'mentor_name' => $mentor_details->fullname, 'designation' => $mentor_details->designation]);
-                // session(['pending_feedback_number' => 0]);
+                session(['user_id' => $student->student_id, 'role' => $user->role, 'student_name' => $student->fullname, 'contact' => $student->contact, 'email' => $credentials['email'], 'current_semester' => $student->semester, 'feedback_filled' => $student->feedback_filled, 'mse_filled' => $student->mse_filled, 'mentor_name' => $mentor_details->fullname, 'designation' => $mentor_details->designation]);
                 $formNumber = FeedbackForm::where('student_id', session('user_id'))
                     ->where('semester', session('current_semester'))
                     ->select('form_number')
@@ -58,7 +56,7 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('teachers.*')
                     ->first();
-                session(['user_id' => $teacher->emp_id, 'role' => $user->role, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'email' => $credentials['email']]);
+                session(['user_id' => $teacher->emp_id, 'role' => $user->role, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'contact' => $teacher->contact, 'email' => $credentials['email']]);
                 // Redirect teachers to the teacher dashboard
                 return redirect()->route('teacher.dashboard');
             } elseif ($user->isHOD()) {
@@ -67,7 +65,7 @@ class LoginController extends Controller
                     ->where('users.email', $credentials['email'])
                     ->select('teachers.*')
                     ->first();
-                session(['user_id' => $teacher->emp_id, 'role' => 'teacher', 'isHOD' => true, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'email' => $credentials['email']]);
+                session(['user_id' => $teacher->emp_id, 'role' => $user->role, 'isHOD' => true, 'faculty_name' => $teacher->fullname, 'designation' => $teacher->designation, 'contact' => $teacher->contact, 'email' => $credentials['email']]);
                 // Redirect teachers to the teacher dashboard
                 return redirect()->route('teacher.dashboard');
             } else {
@@ -86,9 +84,9 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            session(['user_id' => $user->id, 'role' => $user->role]);
 
             if ($user->isAdmin()) {
+                session(['user_id' => $user->id, 'role' => $user->role]);
                 return redirect()->route('admin.dashboard');
             } else {
                 Auth::logout();

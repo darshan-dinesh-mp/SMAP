@@ -13,19 +13,17 @@
             <div class="-space-y-3">
                 <h1 class="text-2xl font-semibold">Mentor Dashboard</h1>
             </div>
-            <a href="{{ route('teacher-profile') }}">
-                <div
-                    class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
-                    {{-- <x-heroicon-o-user class="w-6 h-6" /> --}}
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
-                        <g fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="6" r="4" />
-                            <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
-                        </g>
-                    </svg>
-                    <span class="font-medium hidden lg:block">{{ session('faculty_name') }}</span>
-                </div>
-            </a>
+            <div
+                class="text-primary hover:bg-secondary border-2 hover:bg-primary/20 duration-200 cursor-pointer flex items-center justify-center rounded-full py-3 px-5 space-x-1">
+                {{-- <x-heroicon-o-user class="w-6 h-6" /> --}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="6" r="4" />
+                        <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
+                    </g>
+                </svg>
+                <span class="font-medium hidden lg:block">{{ session('faculty_name') }}</span>
+            </div>
         </nav>
         <div class="px-12 py-8">
             <div class="grid grid-cols-3 grid-rows-1 space-x-6">
@@ -50,17 +48,19 @@
             </div>
         </div>
         <div class="">
-            <div class="grid grid-cols-4 gap-x-0 gap-y-0 border-b-2 border-black/20 bg-secondary p-4">
+            <div class="grid grid-cols-5 gap-x-0 gap-y-0 border-b-2 border-black/20 bg-secondary p-4">
                 <h1 class="text-lg font-medium">Emp ID</h1>
                 <h1 class="text-lg font-medium">Faculty Name</h1>
                 <h1 class="text-lg font-medium">Designation</h1>
+                <h1 class="text-lg font-medium">Email</h1>
                 <h1 class="text-lg font-medium">Contact</h1>
             </div>
             @foreach ($teachers as $teacher)
-            <div class="grid grid-cols-4 gap-x-0 gap-y-0 py-4 px-3 border-b-2 border-black/10">
+            <div class="grid grid-cols-5 gap-x-0 gap-y-0 py-4 px-3 border-b-2 border-black/10">
                 <h1 class="text-lg">{{ $teacher->emp_id }}</h1>
                 <h1 class="text-lg">{{ $teacher->fullname }}</h1>
                 <h1 class="text-lg">{{ $teacher->designation }}</h1>
+                <h1 class="text-lg">{{ $teacher->email }}</h1>
                 <h1 class="text-lg">{{ $teacher->contact }}</h1>
                 <!-- <a href="route('edit-student', ['student_id' => $student->student_id])">
                     <div>
