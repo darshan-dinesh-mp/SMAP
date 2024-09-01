@@ -1,19 +1,4 @@
-1. git clone <repo url>
-2. git pull
-3. npm i
-4. composer i
-5. start mysql and apache
-6. php artisan serve
-7. npm run dev
-8. start coding 🤗
 
-
---Only for info--
-(what i did after git clone)
-npm i 
-composer i
-cp .env.example .env
-php artisan key:generate"# zv" 
 ![Screenshot (27)](https://github.com/user-attachments/assets/a84ba000-4395-4bde-a728-cc6efba8cc23)
 ![Screenshot (31)](https://github.com/user-attachments/assets/b519c98a-a681-471b-9b23-1096f265d965)
 ![Screenshot (32)](https://github.com/user-attachments/assets/583b91d6-e29a-4606-ab14-519b30f0d3bf)
